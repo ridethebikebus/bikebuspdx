@@ -1,0 +1,54 @@
+title: BikeBusPDX
+description: BikeBusPDX. Transforming our communities and planet through the simple act of riding bikes to school together.
+theme: minimal-mistakes-jekyll
+
+# https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+
+url: https://bikebuspdx.org
+#logo: "/assets/images/logo.png"
+favicon_ico: "/assets/images/favicon.ico"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+repository: "ridethebikebus/bikebuspdx"
+
+timezone: America/Los_Angeles
+
+include:
+  - "_pages"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      show_date: true
+      read_time: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+
+twitter:
+  username: "mmistakes-theme"
+facebook:
+  username: "michaelrose"  # https://www.facebook.com/michaelrose
+og_image: /assets/images/Alameda-Elementary-School-Bike-Bus-12.jpg
+
+teaser: /assets/images/Alameda-Elementary-School-Bike-Bus-12.jpg
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/mmistakes"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mmistakes"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/mmistakes"

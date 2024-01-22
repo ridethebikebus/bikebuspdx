@@ -1,0 +1,30 @@
+[
+  {
+    "from": "/calendar",
+    "to": "https://calendar.google.com/calendar/r?cid=NmIwYzNjOTEwNzU0MDQxOGViMTUxZjRmYzNmZTlmMTY1ODlhOWI3YTU4Y2RjZTM2YTEwZmQwYzFkMzJmZmI4Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+  },
+  {
+    "from": "/drive",
+    "to": "https://drive.google.com/drive/folders/1eDz5sKWwasLHjLYpglG6qcJVfFIn1gX4"
+  },
+  {
+    "from": "/resources",
+    "to": "https://docs.google.com/document/d/1jzrHngtUIpWCx4NgyYuET0baQjKjMQJwh909I1nWuTI"
+  },
+  {
+    "from": "/count",
+    "to": "https://docs.google.com/forms/d/e/1FAIpQLScut27kwfHJJbAL6UtFy5vwJNPeI8gNKJRqdOxmNRwCBky_MQ/viewform"
+  },
+  {
+    "from": "/count-results",
+    "to": "https://docs.google.com/spreadsheets/d/18wLBNg2CgxzwLZOrVuomIs6xkt63DUxRYQtMr1murMs/"
+  },
+  {
+    "from": "/jje",
+    "to": "https://linkpages.pro/A9OFjO"
+  },
+  {
+    "from": "/gh",
+    "to": "https://github.com/ridethebikebus/bikebuspdx.github.io"
+  }
+]
