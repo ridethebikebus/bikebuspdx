@@ -23,3 +23,7 @@
 .mt-6 { margin-top: calc(var(--spacing) * 6); }
 .mb-7 { margin-bottom: calc(var(--spacing) * 7); }
 .mt-7 { margin-top: calc(var(--spacing) * 7); }
+
+.text-center { text-align: center; }
+
+.fs-120p { font-size: 120%; }

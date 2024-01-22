@@ -1,0 +1,51 @@
+// *****************
+// Global Variables
+// *****************
+
+// Spaces
+$base-spacing-unit: 20px;
+
+// Transition
+$global-transition: all .2s;
+
+
+// *****************
+// Color Variables
+// *****************
+$brand-color: #323a96;
+$dark: #0a0a12;
+$blue-dark: #16151f;
+$gray: #757575;
+$light-gray: #c6c6c6;
+$white: #fff;
+
+// Body Color
+$text-color: $white;
+
+// Background Colors
+$background-color: $blue-dark;
+
+
+// *****************
+// Typography
+// *****************
+$base-font-size: 18px;
+$base-font-style: normal;
+$base-font-variant: normal;
+$base-font-weight: normal;
+$base-font-family: 'Josefin Sans', sans-serif;
+$base-line-height: 1.7;
+
+// Headings
+$heading-font-weight: 700;
+$heading-font-family: 'Poppins', Arial, sans-serif; 
+$heading-color: $text-color;
+
+$font-size-h1:  36px;
+$font-size-h2:  28px;
+$font-size-h3:  24px;
+$font-size-h4:  20px;
+$font-size-h5:  18px;
+$font-size-h6:  16px;
+
+$heading-line-height: 1.4em;

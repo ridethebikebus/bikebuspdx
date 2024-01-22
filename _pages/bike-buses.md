@@ -1,6 +1,7 @@
 ---
 title: Portland Bike Buses
 permalink: /bike-buses
+layout: page
 description: View all of the Bike Buses that are going on in Portland!
 ---
 

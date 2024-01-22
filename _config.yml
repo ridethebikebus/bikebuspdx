@@ -1,54 +1,91 @@
-title: BikeBusPDX
-description: BikeBusPDX. Transforming our communities and planet through the simple act of riding bikes to school together.
-theme: minimal-mistakes-jekyll
+#-------------------------------
+# General Site Settings
+title: Bike Bus PDX
+logo: # You can add own logo. For example '/images/logo.png'.
+description: Transforming our communities and planet through the simple act of riding bikes to school together.
+baseurl: "" # The subpath of your site, e.g. /blog
+url: "" # The base hostname & protocol for your site, e.g. http://example.com
 
-# https://mmistakes.github.io/minimal-mistakes/docs/configuration/
 
-url: https://bikebuspdx.org
-#logo: "/assets/images/logo.png"
-favicon_ico: "/assets/images/favicon.ico"
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-repository: "ridethebikebus/bikebuspdx"
+#-------------------------------
+# Author Settings
+#author:
+#  name: Brandon Watson
+#  avatar: '/images/15.jpg'
 
-timezone: America/Los_Angeles
+
+#-------------------------------
+# Hero Settings
+hero:
+  title: Bike Bus PDX
+  description: Portland Rocks!
+  image: '/assets/images/hero.jpg'
+
+
+#-------------------------------
+# Contact Settings
+#contact:
+#  email: ride@bikebuspdx.org # Add your email for contant form
+#  description: contact settings desc
+
+# NOTE
+# Aditu theme comes with a contact form built-in. You can use this form with Formspree service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+
+
+#-------------------------------
+# Footer section
+# Example of adding a new link to the footer - {icon: "ion-logo-github", link: "https://github.com"}
+# Other icons can be found at https://ionicons.com
+social:
+- {icon: "ion-logo-twitter", link: "https://twitter.com"}
+- {icon: "ion-logo-facebook", link: "https://facebook.com"}
+- {icon: "ion-logo-instagram", link: "https://instagram.com"}
+- {icon: "ion-logo-github", link: "https://github.com"}
+
+
+#-------------------------------
+# Comment Section (Disqus)
+# disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
+
+
+#-------------------------------
+# Google Analytics
+# google-analytics: # Add your identifier. For example UA-99631805-1.
+
+
+#-------------------------------
+# Newsletter
+# mailchimp: true # To enable the mailchimp form, use the value true. To turn off use the value false.
+# mailchimp-identifier: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
+
+
+#-------------------------------
+# Build settings
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll/tagging
+
+paginate: 9
+paginate_path: "/page/:num"
+
+# Pages Path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
 
 include:
-  - "_pages"
+  - _pages
 
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      show_date: true
-      read_time: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag_page
+tag_permalink_style:  pretty
 
-twitter:
-  username: "mmistakes-theme"
-facebook:
-  username: "michaelrose"  # https://www.facebook.com/michaelrose
-og_image: /assets/images/Alameda-Elementary-School-Bike-Bus-12.jpg
-
-teaser: /assets/images/Alameda-Elementary-School-Bike-Bus-12.jpg
-
-footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/mmistakes"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/mmistakes"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/mmistakes"
+sass:
+  sass_dir: _sass
+  style: compressed

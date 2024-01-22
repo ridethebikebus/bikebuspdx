@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Aditu — Stylish Dark Theme for Jekyll</title>
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
+
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site-header" role="banner">
+      <h1 class="site-title">Aditu</h1>
+      <p class="site-description">Theme Documentation</p>
+    </header><!-- .site-header -->
+
+    <div id="main">
+
+      <div id="content" role="main">
+        <hr />
+
+        <section>
+          <h2>Theme Information</h2>
+          <ul>
+            <li>Name: <strong>Aditu</strong> - Stylish Dark Theme for Jekyll</li>
+            <li>Aditu is a stylish and modern dark theme with a clean and unique design, this theme is created for those who want to share their stories quickly and easily, as well as provide your readers with an unforgettable experience of viewing content.</li>
+            <li>Current Version: 1.2.0</li>
+            <li>Released: 28/09/2020</li>
+            <li>Creator: <a href="https://jekyllthemes.io/developers/artem-sheludko">Artem Sheludko</a></li>
+          </ul>
+          <hr />
+        </section>
+
+        <section>
+          <h2 id="top">Table of Contents</h2>
+          <ul>
+            <li><a href="#configurations">Configurations</a></li>
+            <li><a href="#deployment">Deployment</a></li>
+            <li><a href="#posts">Posts</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#navigation">Navigation</a></li>
+            <li><a href="#DisqusComments">Disqus Comments</a></li>
+            <li><a href="#GoogleAnalytics">Google Analytics</a></li>
+            <li><a href="#UpdateFavicon">Update favicon</a></li>
+            <li><a href="#Credits">Credits</a></li>
+            <li><a href="#Support">Support</a></li>
+          </ul>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="configurations">Configurations</h3>
+
+          <p>Aditu theme comes with different customizations in the <code>_config.yml</code> file:</p>
+
+          <img src="assets/img/config.png" alt="config">
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="deployment">Deployment</h3>
+
+          <p>To run the theme locally, navigate to the theme directory and run <code>bundle install</code> to install the
+            dependencies, then run <code>bundle exec jekyll serve</code> to start the Jekyll server.</p>
+          <p>I would recommend checking the <a href="https://jekyllrb.com/docs/deployment-methods/">Deployment Methods</a> page on
+            Jekyll website.</p>
+
+          <p><strong>Important:</strong> For security reasons, Github does not allow plugins like <code>jekyll-tagging</code> when
+          deploying with Github Pages.</p>
+
+          <p>To use all the features of the plugin, use the <a href="https://www.netlify.com" target="_blank">Netlify</a> service for deployment.</p>
+
+          <p>All you need to do is create a new private repository on GitHub or GitLab. Upload the theme to the repository and link
+          your repo to Netlify. Please check <a href="https://www.netlify.com/blog/2020/04/02/a-step-by-step-guide-jekyll-4.0-on-netlify/#step-2-link-to-your-github" target="_blank">this link</a> with the step by step guidelines.</p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="posts">Posts</h3>
+
+          <p>To create a new post, you can create a new markdown file inside the <code>_posts</code> directory by following the <a href="https://jekyllrb.com/docs/posts/#creating-post-files">recommended file structure</a>.</p>
+
+          <img src="assets/img/post.png" alt="post">
+
+          <p>You can set the tags, featured or not, and the post image.</p>
+
+          <p>The <code>featured</code> key is to mark the post as a featured post. This will add a simple star icon (☆) to the right corner of the post card.</p>
+
+          <p>Add post images to <strong>/images/</strong> directory.</p>
+
+          <p>For tags, try to not add space between two words, for example, <code>Ruby on Rails</code>, could be something like (<code>ruby-on-rails</code>, <code>Ruby_on_Rails</code>, or <code>Ruby-on-Rails</code>).</p>
+
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="pages">Pages</h3>
+
+          <p>To create a new page, just create a new markdown file inside the <code>_pages</code> directory.</p>
+          <p>The following is the <code>about.md</code> file that you can find as an example included in the theme with the configurations you can set.</p>
+
+          <img src="assets/img/page.png" alt="page">
+
+          <p>Things you can change are: <code>title</code> and <code>image</code> name.</p>
+
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="navigation">Navigation</h3>
+
+          <p>The navigation on the header will automatically include all the links to the pages you have created.</p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="DisqusComments">Disqus Comments</h3>
+
+          <p>Aditu Theme comes with Disqus comments enabled.</p>
+
+          <p>Open <code>_config.yml</code> file, and change the <code>mr-brown</code> value on line 50 with your <a href="https://help.disqus.com/customer/portal/articles/466208">Disqus account shortname</a>.</p>
+
+          <img src="assets/img/disqus.png" alt="disqus">
+
+          <p>That’s all you need to setup Disqus from the theme side. If you get any issue regarding that comments are unable to load. First, make sure you have <a href="https://help.disqus.com/customer/portal/articles/466182-publisher-quick-start-guide">registered your website with Disqus (Step 1)</a>.</p>
+
+          <p>And also check <a href="https://help.disqus.com/customer/portal/articles/472007-i-m-receiving-the-message-%22we-were-unable-to-load-disqus-%22">Disqus troubleshooting guide</a> if you still have issues.</p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="GoogleAnalytics">Google Analytics</h3>
+          <p>To integrate Google Analytics, open <code>_config.yml</code>, and add your Google Analytics identifier.</p>
+
+          <img src="assets/img/analytics.png" alt="analytics">
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="UpdateFavicon">Update favicon</h3>
+          <p>You can find the current favicon (favicon.ico) inside the theme root directory, just replace it with your new favicon.</p>
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="Credits">Credits</h3>
+          <p>I have used the following scripts, fonts or other files as listed.</p>
+          <ul>
+            <li><a href="https://fonts.google.com/specimen/Domine">Google Fonts</a> (Poppins, Josefin sans).</li>
+            <li><a href="https://ionicons.com/">Ionicons</a></li>
+            <li><a href="http://fitvidsjs.com/">FitVids.js</a></li>
+            <li><a href="https://github.com/fat/zoom.js">Medium’s Image Zoom</a></li>
+            <li><a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple Jekyll Search</a></li>
+            <li><a href="https://jquery.com/">jQuery.com</a></li>
+            <li>Preview Images form <a href="https://unsplash.com/">unsplash.com</a>, <a href="https://www.pexels.com/">pexels.com</a></li>
+          </ul>
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="Support">Support</h3>
+          <div class="support">
+            <p>If you have any questions that are not answered here, please feel free to contact me by mail.</p>
+            <a href="mailto:artemsheludko@tuta.io" class="support-btn">Contact Artem</a>
+          </div><!-- .support -->
+
+          <hr />
+        </section>
+
+        <p><a href="#top">Go To Table of Contents</a></p>
+      </div><!-- #content -->
+    </div><!-- #main -->
+    <footer class="site-info" role="contentinfo">
+      <p>© 2020 Artem Sheludko</p>
+    </footer><!-- .site-info -->
+  </div><!-- .wrap -->
+</body>
+</html>

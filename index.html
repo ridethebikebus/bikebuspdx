@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+{% include hero.html %}
+
+<div class="container">
+  <h2 class="text-center">Find your Bike Bus</h2>
+  <div class="post-tags">
+    {% for bus in site.data.buses %}
+    <a class="post-tags__tag fs-120p" href="{{ bus.link || bus.map }}">{{ bus.name }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="container__inner">
+        <div class="contaniner__inner-box">
+          <div class="row grid">
+            {% if site.posts.size > 0 %}
+              {% for post in paginator.posts %}
+                {% include article-content.html %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include pagination.html %}

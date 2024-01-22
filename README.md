@@ -1,20 +1,24 @@
-# bikebuspdx.org
+# Aditu
 
-The docs use the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) theme.
-Check it out for usage.
+Aditu is a stylish and modern dark theme with a clean and unique design, this theme is created for those who want to share their stories quickly and easily, as well as provide your readers with an unforgettable experience of viewing content.
 
-Also refer to the [Jekyll Docs](https://jekyllrb.com/docs/pages/)
-for information about how to structure content, what goes into frontmatter, etc.
+* * *
 
-## Local development
+### Demo
 
-Run `make run-local` to build and run a docker container to serve the Jekyll site locally
-(this avoids you having to deal with Ruby).
-You will need to restart it in certain cases, like modifying the config file,
-but the build will watch for changes and you'll see them when you reload your browser.
+Check the theme in action [Demo](https://aditu.netlify.com/)
 
-## Deployment
+* * *
 
-Deployment is handled via Github Actions and deploys to Github Pages.
+### Deployment
 
-View the site at <https://bikebuspdx.org>.
+To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `bundle exec jekyll serve` to start the Jekyll server.
+
+I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+
+
+* * *
+
+### Documentation
+
+Before using the Aditu theme, please read the attached documentation.
