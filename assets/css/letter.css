@@ -27,7 +27,6 @@ p, h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
-  position: fixed;
   text-align: center;
   font-size: 1.5rem;
   font-family: Helvetica, Arial, sans-serif;
@@ -93,7 +92,7 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 
   .container {
-    padding: 80px 2rem;
+    padding: 24px 2rem 80px;
   }
 
   .signature {
@@ -119,6 +118,6 @@ p, h1, h2, h3, h4, h5, h6 {
   }
 
   .container {
-    padding: 80px 14rem;
+    padding: 24px 14rem 80px;
   }
 }
