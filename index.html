@@ -4,14 +4,33 @@ layout: default
 
 {% include hero.html %}
 
-<div class="container">
-  <h2 class="text-center">Find your Bike Bus</h2>
+<div class="container mb-5">
+  <h1 class="text-center">Find your Bike Bus</h1>
   <div class="post-tags">
     {% for bus in site.data.buses %}
-    <a class="post-tags__tag fs-120p" href="{{ bus.link || bus.map }}">{{ bus.name }}</a>
+    <a class="post-tags__tag pill" href="{{ bus.link || bus.map }}">{{ bus.name }}</a>
     {% endfor %}
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="container__inner">
+        <div class="contaniner__inner-box">
+          <div class="row grid">
+            {% assign page = site.pages | where: "path", "_pages/starting-a-bike-bus.md" | first %}
+            {% include page-card.html %}
+            {% assign page = site.pages | where: "path", "_pages/letter.html" | first %}
+            {% include page-card.html %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1 class="text-center mt-2 mb-5">In the News</h1>
 
 <div class="container">
   <div class="row">

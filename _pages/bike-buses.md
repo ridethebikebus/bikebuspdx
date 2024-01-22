@@ -3,6 +3,7 @@ title: Portland Bike Buses
 permalink: /bike-buses
 layout: page
 description: View all of the Bike Buses that are going on in Portland!
+image: /assets/images/contact.png
 ---
 
 Want to start your own Bike Bus? [Learn How]({% link _pages/starting-a-bike-bus.md %})
