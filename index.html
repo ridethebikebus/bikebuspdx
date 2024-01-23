@@ -8,7 +8,7 @@ layout: default
   <h1 class="text-center">Find your Bike Bus</h1>
   <div class="post-tags">
     {% for bus in site.data.buses %}
-    <a class="post-tags__tag pill" href="{{ bus.link || bus.map }}">{{ bus.name }}</a>
+    <a class="post-tags__tag pill" href="{{ site.baseurl }}/{{ bus.slug }}">{{ bus.name }}</a>
     {% endfor %}
   </div>
 </div>

@@ -37,11 +37,9 @@ hero:
 # Example of adding a new link to the footer - {icon: "ion-logo-github", link: "https://github.com"}
 # Other icons can be found at https://ionicons.com
 social:
-- {icon: "ion-logo-twitter", link: "https://twitter.com"}
-- {icon: "ion-logo-facebook", link: "https://facebook.com"}
-- {icon: "ion-logo-instagram", link: "https://instagram.com"}
-- {icon: "ion-logo-github", link: "https://github.com"}
-
+- {icon: "fa-solid fa-envelope", link: "mailto:ride@bikebuspdx.org"}
+- {icon: "fa-brands fa-instagram", link: "https://www.instagram.com/bikebuspdx/"}
+- {icon: "fa-brands fa-twitter", link: "https://twitter.com/bikebuspdx"}
 
 #-------------------------------
 # Comment Section (Disqus)

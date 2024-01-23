@@ -94,7 +94,7 @@ $(document).ready(function() {
       var posts = $('.grid__post', data);
       $('.grid').append(posts);
 
-      $load_posts_button.text('Load more stories ').append('<i class="ion ion-ios-arrow-down"></i>');
+      $load_posts_button.text('Load more stories ').append('<i class="fa-solid fa-arrow-down"></i>');
       pagination_next_page_number++;
 
       if (pagination_next_page_number > pagination_available_pages_number) {
