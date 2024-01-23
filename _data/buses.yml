@@ -61,7 +61,7 @@
   slug: metzger
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.448305,-122.758826,15.11z
-  image: /assets/images/metzger-bike-bus.jpeg
+  image: /assets/images/metzger-bike-bus.jpg
 - name: Rigler
   slug: rigler
   link_text: Route Map
@@ -86,7 +86,7 @@
   slug: vestal
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.530081,-122.581037,15.45z
-  image: /assets/images/vestal-tallbikes.jpeg
+  image: /assets/images/vestal-tallbikes.jpg
 - name: Woodstock
   slug: woodstock
   link_text: Route Map
