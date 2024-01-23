@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .social__item {
     display: inline-block;
     margin-left: 10px;
@@ -26,7 +26,7 @@
     font-size: 18px;
     line-height: 40px;
     border-radius: 3px;
-    color: $white;
+    color: $black;
     background-color: $blue-dark;
     &:hover {
       background-color: $brand-color;

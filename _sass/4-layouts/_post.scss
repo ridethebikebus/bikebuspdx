@@ -48,7 +48,7 @@
     letter-spacing: 1px;
     font-weight: 700;
     border-radius: 30px;
-    color: rgba($white, .9);
+    color: rgba($black, .9);
     background-color: $brand-color;
     &:hover {
       background-color: darken($brand-color, 5%);
@@ -85,7 +85,7 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  color: $white;
+  color: $black;
 }
 
 .post__author {
@@ -97,7 +97,7 @@
     height: 25px;
     margin-right: 7px;
     border-radius: 50%;
-    border: 1px solid rgba($white, .6);
+    border: 1px solid rgba($black, .6);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,7 +112,7 @@
     }
   }
   span {
-    color: rgba($white, .8);
+    color: rgba($black, .8);
   }
 }
 
@@ -128,7 +128,7 @@
     width: 3px;
     margin: 0 .5rem 0 .5rem;
     border-radius: 50%;
-    background-color: rgba($white, .8);
+    background-color: rgba($black, .8);
   }
 }
 
@@ -183,22 +183,11 @@
     line-height: 30px;
     border-radius: 50%;
     font-size: 16px;
-    color: $dark;
-    background-color: $white;
+    color: $black;
+    background-color: $pdx-yellow;
     transition: all .2s;
     &:hover {
-      &.share__facebook {
-        color: #3b5998;
-      }
-      &.share__twitter {
-        color: #55acee;
-      }
-      &.share__linkedin {
-        color: #0077b5;
-      }
-      &.share__pinterest {
-        color: #bd081c;
-      }
+      color: $white;
     }
   }
 

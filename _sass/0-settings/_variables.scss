@@ -12,18 +12,24 @@ $global-transition: all .2s;
 // *****************
 // Color Variables
 // *****************
-$brand-color: #323a96;
-$dark: #0a0a12;
-$blue-dark: #16151f;
+$pdx-blue: rgb(62, 132, 214);
+$pdx-green: rgb(16, 95, 50);
+$pdx-yellow: rgb(252, 177, 52);
+
+$brand-color: $pdx-yellow;
+$dark: lighten($pdx-green, 30%);
+$blue-dark: $pdx-yellow;
 $gray: #757575;
 $light-gray: #c6c6c6;
+$black: #101113;
 $white: #fff;
+$header-color: $pdx-blue;
 
 // Body Color
-$text-color: $white;
+$text-color: $black;
 
 // Background Colors
-$background-color: $blue-dark;
+$background-color: $white;
 
 
 // *****************

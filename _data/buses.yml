@@ -1,24 +1,28 @@
 # Keys are:
 # name: Required. Name of the bike bus, like 'Alameda'
 # slug: Required. Short slug for the URL and other purposes.
-# content: Markdown content to render above the links.
+# content: Optional. Markdown content to render above the links.
 # link_text: Required. Text for the top link.
 # link_href: Required: Href for the top link.
-# email
-# mastodon_handle
-# mastodon_href
-# instagram
-# twitter
-# tiktok
-# facebook
+# image: Optional. Path to image, like /assets/images/mybikebus.jpg.
+# These fields are all optional, and used for social links:
+# - email: mybikebus@gmail.com
+# - mastodon_handle: mybikebus.myserver.org (only used for display)
+# - mastodon_href: Href to your user on your server.
+# - instagram: mybikebus
+# - twitter: mybikebus (no @)
+# - tiktok: mybikebus (no @)
+# - facebook: mybikebus
 - name: Alameda
   slug: alameda
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.54595,-122.62335,15.01z
+  image: /assets/images/Alameda-Elementary-School-Bike-Bus-14.jpg
 - name: Abernathy
   slug: abernathy
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.50627,-122.64591,14.36z
+  image: /assets/images/abernathy-bike-bus-2.png
 - name: Cesar Chavez
   slug: cesar-chavez
   link_text: Route Map
@@ -31,6 +35,7 @@
   slug: creston
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.497235,-122.604792,15.67z
+  image: /assets/images/creston-bike-bus-1.jpg
 - name: da Vinci
   slug: da-vinci
   link_text: Route Map
@@ -39,6 +44,7 @@
   slug: glencoe
   link_text: Route Map
   link_href: https://felt.com/map/Glencoe-Bike-Bus-Map-PWlgBEQ6SPSxlMQKRPfsAD
+  image: /assets/images/glencoe-bike-bus-1.jpg
   email: glencoebikebus@gmail.com
   instagram: glencoebikebus
   content: |
@@ -55,6 +61,7 @@
   slug: metzger
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.448305,-122.758826,15.11z
+  image: /assets/images/metzger-bike-bus.jpeg
 - name: Rigler
   slug: rigler
   link_text: Route Map
@@ -79,6 +86,7 @@
   slug: vestal
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.530081,-122.581037,15.45z
+  image: /assets/images/vestal-tallbikes.jpeg
 - name: Woodstock
   slug: woodstock
   link_text: Route Map

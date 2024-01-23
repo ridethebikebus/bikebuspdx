@@ -1,11 +1,13 @@
 /* Header */
 .header {
   width: 100%;
-  margin: 35px 0;
+  padding: 25px 0;
+  margin-bottom: 15px;
   transition: $global-transition;
-  color: $white;
+  color: $black;
+  background-color: $header-color;
   @media only screen and (max-width: $desktop) {
-    margin: 25px 0;
+    padding: 25px 0;
   }
 }
 
@@ -64,11 +66,11 @@
     height: 40px;
     text-align: center;
     line-height: 40px;
-    color: rgba($white, .5);
+    color: rgba($black, .5);
     transition: all .25s ease;
     cursor: pointer;
     &:hover {
-      color: $white;
+      color: $black;
     }
   }
 
@@ -100,13 +102,13 @@
       &:last-child {
         margin-right: 0;
       }
-  
+
       .nav__link {
         position: relative;
         font-size: 16px;
         font-weight: 400;
         text-decoration: none;
-        color: $white;
+        color: $black;
         &:hover {
           &::before {
             opacity: 1;
@@ -146,7 +148,7 @@
       &:last-child {
         margin-bottom: 0;
       }
-  
+
       .nav__link {
         position: relative;
         font-size: 18px;
@@ -164,7 +166,7 @@
   display: flex;
   align-items: center;
   font-size: 24px;
-  color: $white;
+  color: $black;
 
   .nav__icon-menu {
     display: none;
@@ -172,7 +174,7 @@
       display: block;
     }
   }
-  
+
   .nav__icon {
     cursor: pointer;
     &:first-child {
@@ -236,7 +238,7 @@
     display: block;
     width: 25px;
     height: 2px;
-    background-color: $white;
+    background-color: $black;
   }
   @media only screen and (max-width: $tablet) {
     margin-bottom: 30px;

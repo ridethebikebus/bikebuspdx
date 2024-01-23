@@ -34,7 +34,7 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    color: rgba($white, 0.8);
+    color: rgba($black, 0.8);
     user-select: none;
     &::before {
       content: "";
@@ -68,7 +68,7 @@
 .article__excerpt {
   margin-bottom: 15px;
   font-size: 15px;
-  color: rgba($white, .6);
+  color: rgba($white, .8);
   @media only screen and (max-width: $mobile) {
     margin-bottom: 10px;
     font-size: 13px;
@@ -130,7 +130,7 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
-  color: $white;
+  color: $black;
 }
 
 .article-tags {
@@ -156,7 +156,7 @@
     letter-spacing: 1px;
     font-weight: 700;
     border-radius: 30px;
-    color: rgba($white, .9);
+    color: rgba($black, .9);
     background-color: $brand-color;
     &:hover {
       background-color: darken($brand-color, 5%);
@@ -174,7 +174,7 @@
 
 .article__date {
   font-size: 14px;
-  color: $text-color;
+  color: $white;
   &::before {
     content: "";
     position: relative;
@@ -184,7 +184,7 @@
     width: 3px;
     margin: 0 .5rem 0 .5rem;
     border-radius: 50%;
-    background-color: rgba($text-color, .8);
+    background-color: rgba($white, .8);
   }
 
   @media only screen and (max-width: $mobile) {
@@ -195,13 +195,14 @@
 .article__author {
   display: flex;
   align-items: center;
+  color: rgba($white, .8);
   &-image {
     display: inline-block;
     width: 25px;
     height: 25px;
     margin-right: 7px;
     border-radius: 50%;
-    border: 1px solid rgba($white, .6);
+    border: 1px solid rgba($black, .6);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -210,9 +211,9 @@
   &-link {
     font-size: 14px;
     text-decoration: underline;
-    color: $white;
+    color: $black;
     &:hover {
-      color: $white;
+      color: $black;
     }
   }
   span {

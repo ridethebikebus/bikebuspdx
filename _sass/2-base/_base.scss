@@ -33,7 +33,7 @@ body {
     border: 1px solid $light-gray;
     outline: none;
   }
-  
+
   @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 29px;
@@ -45,7 +45,7 @@ body {
 }
 
 *::selection {
-  color: $white;
+  color: $black;
   background-color: rgba($brand-color, 0.7);
 }
 
@@ -93,7 +93,7 @@ blockquote {
   line-height: 37px;
   font-weight: 700;
   color: $text-color;
-  
+
   &:before {
     content: '\201C';
     position: absolute;
@@ -103,7 +103,7 @@ blockquote {
     font-size: 4em;
     color: rgba($text-color, .6);
   }
-  
+
   cite {
     font-size: 16px;
     font-style: normal;
@@ -135,7 +135,7 @@ code[class*=language-], pre[class*=language-] {
   line-height: inherit;
 }
 
-img, 
+img,
 .zoom-img-wrap {
   max-width: 100%;
   height: auto;

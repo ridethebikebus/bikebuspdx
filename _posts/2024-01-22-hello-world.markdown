@@ -1,11 +1,18 @@
 ---
 layout: post
-title:  We finally have a real website
+title:  Hello Portland!
 date:   2024-01-22 12:00:00 -0800
 author:
   name: BikeBusPDX
-#image:  '/images/01-1.jpg'
-#tags:   Lifestyle
+image: /assets/images/Alameda-Elementary-School-Bike-Bus-3.jpg
 ---
 
-We finally have a real website. Thanks to everyone who helped!
+To add or edit your Bike Bus on the BikeBusPDX.org website, email [ride@bikebuspdx.org](mailto:ride@bikebuspdx.org).
+
+
+Or, you can make a change on GitHub directly, if you're so inclined and capable:
+
+- The source for this site is available at <https://github.com/ridethebikebus/bikebuspdx>.
+- The data for the bike buses is at <https://github.com/ridethebikebus/bikebuspdx/blob/main/_data/buses.yml>
+- Refer to the `README.md` if you need to run locally. Or just open a Pull Request.
+

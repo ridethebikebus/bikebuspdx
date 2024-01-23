@@ -10,6 +10,7 @@ module Bikebuspdx
             'navigation_exclude' => true,
             'permalink' => "/#{bus['slug']}"
           )
+          file.data['image'] = bus['image'] if bus['image']
           kvps = bus.map { |k, v| "#{k}='#{v}' " }.join(' ')
           file.content = "{% include bus-minisite-content.html #{kvps} %}"
           file.output
