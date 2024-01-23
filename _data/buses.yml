@@ -1,8 +1,9 @@
 # Keys are:
-# name
-# slug
-# link_text
-# link_href
+# name: Required. Name of the bike bus, like 'Alameda'
+# slug: Required. Short slug for the URL and other purposes.
+# content: Markdown content to render above the links.
+# link_text: Required. Text for the top link.
+# link_href: Required: Href for the top link.
 # email
 # mastodon_handle
 # mastodon_href
@@ -38,8 +39,10 @@
   slug: glencoe
   link_text: Route Map
   link_href: https://felt.com/map/Glencoe-Bike-Bus-Map-PWlgBEQ6SPSxlMQKRPfsAD
-  instagram: glencoebikebus
   email: glencoebikebus@gmail.com
+  instagram: glencoebikebus
+  content: |
+    Riding every Wednesday morning, rain or shine!
 - name: James John
   slug: james-john
   link_text: James John Bike Bus Homepage

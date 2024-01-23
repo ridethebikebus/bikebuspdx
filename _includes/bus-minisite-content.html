@@ -1,3 +1,6 @@
+{% if include.content %}{% markdown %}
+{{ include.content }}
+{% endmarkdown %}{% endif %}
 <ul>
     {% if include.link_text %}<li><i class="fa-solid fa-link"></i> <a href="{{ include.link_href }}">{{ include.link_text }}</a></li>{% endif %}
     {% if include.email %}<li><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ include.email }}">{{ include.email }}</a></li>{% endif %}
@@ -9,5 +12,5 @@
 </ul>
 
 <a href="{{ include.link_href }}">
-    <img src="{{ site.baseurl }}/assets/images/routes/route-{{ include.slug }}.png" alt="{{ include.name }} Bike Bus Route Map">
+    <img class="minisite-image" src="{{ site.baseurl }}/assets/images/routes/route-{{ include.slug }}.png" alt="{{ include.name }} Bike Bus Route Map">
 </a>
