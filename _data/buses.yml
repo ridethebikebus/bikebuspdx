@@ -18,11 +18,12 @@
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.54595,-122.62335,15.01z
   image: /assets/images/Alameda-Elementary-School-Bike-Bus-14.jpg
-- name: Abernathy
-  slug: abernathy
+- name: Abernethy
+  slug: abernethy
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.50627,-122.64591,14.36z
-  image: /assets/images/abernathy-bike-bus-2.png
+  instagram: abernethybikebus
+  image: /assets/images/abernethy-bike-bus-2.png
 - name: Cesar Chavez
   slug: cesar-chavez
   link_text: Route Map
@@ -36,6 +37,7 @@
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.497235,-122.604792,15.67z
   image: /assets/images/creston-bike-bus-1.jpg
+  instagram: crestoneaglesbikebus
 - name: da Vinci
   slug: da-vinci
   link_text: Route Map
@@ -62,6 +64,7 @@
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.448305,-122.758826,15.11z
   image: /assets/images/metzger-bike-bus.jpg
+  instagram: metzgerbikebus
 - name: Rigler
   slug: rigler
   link_text: Route Map
@@ -87,6 +90,7 @@
   link_text: Route Map
   link_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.530081,-122.581037,15.45z
   image: /assets/images/vestal-tallbikes.jpg
+  instagram: vestalpta
 - name: Woodstock
   slug: woodstock
   link_text: Route Map
