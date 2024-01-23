@@ -3,6 +3,7 @@
 {% endmarkdown %}{% endif %}
 <ul>
     {% if include.link_text %}<li><i class="fa-solid fa-link"></i> <a href="{{ include.link_href }}">{{ include.link_text }}</a></li>{% endif %}
+    {% if include.map_href %}<li><i class="fa-solid fa-map"></i> <a href="{{ include.map_href }}">Route Map</a></li>{% endif %}
     {% if include.email %}<li><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ include.email }}">{{ include.email }}</a></li>{% endif %}
     {% if include.mastodon_handle %}<li><i class="fa-brands fa-mastodon"></i> <a href="{{ include.mastodon_href }}">@{{ include.mastodon_handle }}</a></li>{% endif %}
     {% if include.instagram %}<li><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/{{ include.instagram }}">@{{ include.instagram }}</a></li>{% endif %}
@@ -11,6 +12,6 @@
     {% if include.facebook %}<li><i class="fa-brands fa-facebook-f"></i> <a href="https://facebook.com/{{ include.facebook }}">{{ include.facebook }}</a></li>{% endif %}
 </ul>
 
-<a href="{{ include.link_href }}">
+<a href="{% if include.map_href %}{{ include.map_href }}{% else %}{{ include.link_href }}{% endif %}">
     <img class="minisite-image" src="{{ site.baseurl }}/assets/images/routes/route-{{ include.slug }}.png" alt="{{ include.name }} Bike Bus Route Map">
 </a>
