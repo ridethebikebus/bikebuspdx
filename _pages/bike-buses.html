@@ -16,15 +16,10 @@ image: /assets/images/contact.png
 
 <div class="mb-4 post-tags">
 {% for bus in site.data.buses %}
-    <a class="post-tags__tag pill" href="{{ bus.link || bus.map }}">{{ bus.name }}</a>
+    <a class="post-tags__tag pill" href="{{ site.baseurl }}/{{ bus.slug }}">{{ bus.name }}</a>
 {% endfor %}
 </div>
 
-<iframe
-    width="100%"
-    height="600"
-    frameborder="0"
-    title="Portland Bike Bus Routes"
-    src="https://felt.com/embed/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.523,-122.65333,12.22z"
-    referrerpolicy="strict-origin-when-cross-origin"
-></iframe>
+<a href="https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.52711,-122.66234,13.23z">
+    <img src="{{ site.baseurl }}/assets/images/routes-map.png" alt="Portland Bike Bus Route Map">
+</a>

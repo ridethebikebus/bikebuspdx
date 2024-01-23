@@ -8,11 +8,6 @@
     {% if include.facebook %}<li><i class="fa-brands fa-facebook-f"></i> <a href="https://facebook.com/{{ include.facebook }}">{{ include.facebook }}</a></li>{% endif %}
 </ul>
 
-<iframe
-    width="100%"
-    height="300"
-    frameborder="0"
-    title="{{ include.name }} Route"
-    src="{{ include.map_embed }}"
-    referrerpolicy="strict-origin-when-cross-origin"
-></iframe>
+<a href="{{ include.link_href }}">
+    <img src="{{ site.baseurl }}/assets/images/routes/route-{{ include.slug }}.png" alt="{{ include.name }} Bike Bus Route Map">
+</a>
