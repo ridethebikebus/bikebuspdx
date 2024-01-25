@@ -16,9 +16,12 @@
 # - tiktok: mybikebus (no @)
 # - facebook: mybikebus
 - name: Alameda
+  email: sbalto@pps.net
   slug: alameda
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.54595,-122.62335,15.01z
   image: /assets/images/Alameda-Elementary-School-Bike-Bus-14.jpg
+  content: |
+    Email for more info.
 - name: Abernethy
   slug: abernethy
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.50627,-122.64591,14.36z
