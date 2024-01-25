@@ -1,24 +1,28 @@
-# Aditu
+# Bike Bus PDX
 
-Aditu is a stylish and modern dark theme with a clean and unique design, this theme is created for those who want to share their stories quickly and easily, as well as provide your readers with an unforgettable experience of viewing content.
+Run `make run-local` to run the site through Docker.
+This means you need Docker, but you don't need to worry about Ruby.
 
-* * *
+Open a browser to <http://localhost:22030> (you can remember the port because of the 2030 Bike Plan).
 
-### Demo
+Otherwise, this is a pretty normal Jekyll site- new blog posts in `_posts`, etc.
 
-Check the theme in action [Demo](https://aditu.netlify.com/)
+## Bike Bus Mini-Sites
 
-* * *
+There is a `_data/buses.yml` file which contains the data that drives bike bus mini-sites
+and the 'find your bike bus' list.
 
-### Deployment
+Check out that file to see the supported fields.
 
-To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `bundle exec jekyll serve` to start the Jekyll server.
+Each bus gets a site at `/<slug>`. So the Alameda Bike Bus site is at `/alameda`.
 
-I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+The code for this is in `_plugins/bus_site_generator.rb`.
 
+## Original Theme
 
-* * *
+This site originally used the Aditu theme. It's been customized heavily but referring to the original
+can be helpful.
 
-### Documentation
+Its docs are in the `aditu-jekyll-theme-v1.2` folder.
 
-Before using the Aditu theme, please read the attached documentation.
+Check out a [demo](https://aditu.netlify.com/).
