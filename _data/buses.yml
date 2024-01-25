@@ -4,8 +4,10 @@
 # content: Optional. Markdown content to render above the links.
 # link_text: Optional. Text for the top link.
 # link_href: Optional: Href for the top link.
-# map_href: Required: Href for the 'Route Map' link and when you click on the route image.
 # image: Optional. Path to image, like /assets/images/mybikebus.jpg.
+# map_href: Required: Href for the 'Route Map' link and when you click on the route image.
+# map_image: Optional. Default to /assets/images/route-{slug}.png.
+#   If using a different route image (like a jpeg), set this.
 #
 # These fields are all optional, and used for social links:
 # - email: mybikebus@gmail.com
@@ -60,6 +62,7 @@
   slug: james-john
   link_text: James John Bike Bus Homepage
   link_href: https://linkpages.pro/A9OFjO
+  map_image: /assets/images/routes/route-james-john.jpg
 - name: Maplewood
   slug: maplewood
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.470737,-122.720523,15.56z
