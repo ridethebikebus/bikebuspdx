@@ -24,6 +24,11 @@
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.50627,-122.64591,14.36z
   instagram: abernethybikebus
   image: /assets/images/abernethy-bike-bus-2.png
+- name: Beach
+  slug: beach
+  map_href: https://www.google.com/maps/dir/45.5626831,-122.6848174/Beach+Elementary+School,+1710+N+Humboldt+St,+Portland,+OR+97217/@45.5614278,-122.6847308,17z/am=t/data=!4m9!4m8!1m0!1m5!1m1!1s0x5495a7722312fb43:0xf3cf0afe2159b7cf!2m2!1d-122.685538!2d45.5579428!3e1?entry=ttu
+  content: |
+    Route goes from N Killingsworth St/Concord Ave to the school every Friday at 8:15am!
 - name: Cesar Chavez
   slug: cesar-chavez
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.586399,-122.71963,15.18z
