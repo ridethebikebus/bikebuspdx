@@ -5,11 +5,12 @@
       <div class="col col-4 col-d-6 col-t-12">
         <div class="widget widget-info">
           <div class="footer-logo">
-            {% if site.logo %}
+          {% if site.logo %}
             <img class="logo__image" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.title }}">
-            {% else %}
-              {{site.title}}
-            {% endif %}
+            {{site.title}}
+          {% else %}
+            {{site.title}}
+          {% endif %}
           </div>
           <p class="footer-desc">{{site.hero.description}}</p>
         </div>

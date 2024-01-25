@@ -1,7 +1,7 @@
 #-------------------------------
 # General Site Settings
 title: Bike Bus PDX
-logo: # You can add own logo. For example '/images/logo.png'.
+logo: /assets/images/bikebuspdx-logo-black-round-512.png # You can add own logo. For example '/images/logo.png'.
 description: Transforming our communities and planet through the simple act of riding bikes to school together.
 baseurl: "" # The subpath of your site, e.g. /blog
 url: "" # The base hostname & protocol for your site, e.g. http://example.com
