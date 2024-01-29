@@ -10,11 +10,11 @@ module Bikebuspdx
             'title' => "#{bus['name']} Bike Bus",
             'navigation_exclude' => true,
             'permalink' => "/#{slug}",
-            'map_image' => "/assets/images/routes/route-#{slug}.png"
           )
           file.data['image'] = bus['image'] if bus['image']
-          file.data['map_image'] = bus['map_image'] if bus['map_image']
-          kvps = bus.map { |k, v| "#{k}='#{v}' " }.join(' ')
+          include_data = bus.dup
+          include_data['map_image'] = bus['map_image'] ? bus['map_image'] : "/assets/images/routes/route-#{slug}.png"
+          kvps = include_data.map { |k, v| "#{k}='#{v}' " }.join(' ')
           file.content = "{% include bus-minisite-content.html #{kvps} %}"
           file.output
         end
