@@ -63,12 +63,12 @@
   link_text: James John Bike Bus Homepage
   link_href: https://linkpages.pro/A9OFjO
   map_image: /assets/images/routes/route-james-john.jpg
-- name: Maplewood
-  slug: maplewood
-  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.470737,-122.720523,15.56z
 - name: Lents
   slug: lents
   map_image: /assets/images/routes/route-lents.jpg
+- name: Maplewood
+  slug: maplewood
+  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.470737,-122.720523,15.56z
 - name: Metzger
   slug: metzger
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.448305,-122.758826,15.11z
