@@ -26,5 +26,13 @@
   {
     "from": "/gh",
     "to": "https://github.com/ridethebikebus/bikebuspdx.github.io"
+  },
+  {
+    "from": "/survey",
+    "to": "http://tinyurl.com/2fxdhhh9"
+  },
+  {
+    "from": "/leaders",
+    "to": "https://portlandstate.qualtrics.com/jfe/form/SV_cLUhlChLuxwvYmG"
   }
 ]
