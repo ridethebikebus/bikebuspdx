@@ -56,6 +56,7 @@
 - name: Glencoe
   slug: glencoe
   map_href: https://felt.com/map/Glencoe-Bike-Bus-Map-PWlgBEQ6SPSxlMQKRPfsAD
+  map_image: /assets/images/routes/route-glencoe.jpg
   image: /assets/images/glencoe-bike-bus-1.jpg
   email: glencoebikebus@gmail.com
   instagram: glencoebikebus
