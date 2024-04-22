@@ -66,7 +66,11 @@
   slug: james-john
   link_text: James John Bike Bus Homepage
   link_href: https://linkpages.pro/A9OFjO
-  map_image: /assets/images/routes/route-james-john.jpg
+  email: jamesjohnbikebus@gmail.com
+  map_image: /assets/images/routes/route-james-john.en.png
+  map_alt: James John Bike Bus Route Map (English)
+  map_image2: /assets/images/routes/route-james-john.es.png
+  map_alt2: James John Bike Bus Route Map (Spanish)
 - name: Lents
   slug: lents
   map_image: /assets/images/routes/route-lents.jpg

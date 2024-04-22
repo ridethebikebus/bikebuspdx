@@ -13,5 +13,7 @@
 </ul>
 
 <a href="{% if include.map_href %}{{ include.map_href }}{% else %}{{ include.link_href }}{% endif %}">
-    <img class="minisite-image" src="{{ site.baseurl }}{{ include.map_image }}" alt="{{ include.name }} Bike Bus Route Map">
+    <img class="minisite-image" src="{{ site.baseurl }}{{ include.map_image }}" alt="{{ include.map_alt }}">
+    {% if include.map_image2 %}<img class="minisite-image" src="{{ site.baseurl }}{{ include.map_image2 }}" alt="{{ include.map_alt2 }}">
+    {% endif %}
 </a>
