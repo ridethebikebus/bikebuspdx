@@ -32,8 +32,10 @@
 - name: Beach
   slug: beach
   map_href: https://www.google.com/maps/d/u/0/viewer?hl=en&ll=45.555662386072505%2C-122.68208815000001&z=15&mid=1XzSYhdnc6okk3jOFzXiONBJYcYKPCSY
+  instagram: beachbiketrain
+  email: transportation@overlookneighborhood.org
   content: |
-    Departs at 7:40am. North routes leaves from N
+    Departs every Friday at 7:40am. North routes leaves from N
     Killingsworth St/Concord Ave, and South leaves from the three big
     trees at Castle and N Overlook Blvd.
 - name: Cesar Chavez
