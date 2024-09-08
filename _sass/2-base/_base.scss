@@ -154,11 +154,11 @@ img,
 }
 
 a {
-  text-decoration: none;
   color: $text-color;
   transition: $global-transition;
   &:hover {
       color: $brand-color;
+      text-decoration: underline;
   }
 }
 

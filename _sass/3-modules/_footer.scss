@@ -70,6 +70,7 @@
   .nav__link {
     font-size: 16px;
     color: $black;
+    @include undecorated-link();
   }
   @media only screen and (max-width: $desktop) {
     padding-right: 0;
@@ -146,5 +147,6 @@
   color: rgba($black, .6);
   a {
     color: $black;
+    @include undecorated-link();
   }
 }

@@ -41,6 +41,7 @@
     margin-right: 5px;
     margin-bottom: 5px;
     padding: 0 10px;
+    @include undecorated-link();
     text-transform: uppercase;
     font-family: 'Poppins', Arial, sans-serif;
     font-size: 10px;
