@@ -107,8 +107,8 @@
         position: relative;
         font-size: 16px;
         font-weight: 400;
-        text-decoration: none;
         color: $black;
+        @include undecorated-link();
         &:hover {
           &::before {
             opacity: 1;
@@ -153,6 +153,7 @@
         position: relative;
         font-size: 18px;
         color: $text-color;
+        @include undecorated-link();
       }
 
       @media only screen and (max-width: $mobile) {

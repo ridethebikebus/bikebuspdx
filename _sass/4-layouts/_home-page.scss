@@ -58,6 +58,7 @@
   font-size: 32px;
   a {
     color: $white;
+    @include undecorated-link();
   }
   @media only screen and (max-width: $mobile) {
     margin: 5px 0 10px;
