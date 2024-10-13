@@ -38,6 +38,7 @@
     Riding Wednesday mornings!
 - name: Beach
   slug: beach
+  map_image: /assets/images/routes/route-beach.png
   map_href: https://www.google.com/maps/d/u/0/viewer?hl=en&ll=45.555662386072505%2C-122.68208815000001&z=15&mid=1XzSYhdnc6okk3jOFzXiONBJYcYKPCSY
   instagram: beachbiketrain
   email: transportation@overlookneighborhood.org
@@ -45,6 +46,16 @@
     Departs every Friday at 7:40am. North routes leaves from N
     Killingsworth St/Concord Ave, and South leaves from the three big
     trees at Castle and N Overlook Blvd.
+- name: Bevery Cleary
+  slug: bevery-cleary
+  map_image: /assets/images/routes/route-bevery-cleary.jpg
+  map_href: https://beverlyclearyschoolpta.membershiptoolkit.com/bike-bus
+  email: BCSBikeBus@gmail.com
+  link_text: Website
+  link_href: https://beverlyclearyschoolpta.membershiptoolkit.com/bike-bus
+  content: |
+    Departs every Wednesday morning at 8:10am, rain or shine!
+    Check out the website for more info.
 - name: Cesar Chavez
   slug: cesar-chavez
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.586399,-122.71963,15.18z
