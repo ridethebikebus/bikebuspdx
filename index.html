@@ -19,11 +19,11 @@ layout: default
       <div class="container__inner">
         <div class="contaniner__inner-box">
           <div class="row grid">
+            {% assign page = site.pages | where: "path", "_pages/bike-bus-friendly-greenways.md" | first %}
+            {% include page-card.html %}
             {% assign page = site.pages | where: "path", "_pages/riding-the-bus.md" | first %}
             {% include page-card.html %}
             {% assign page = site.pages | where: "path", "_pages/starting-a-bike-bus.md" | first %}
-            {% include page-card.html %}
-            {% assign page = site.pages | where: "path", "_pages/letter.html" | first %}
             {% include page-card.html %}
           </div>
         </div>

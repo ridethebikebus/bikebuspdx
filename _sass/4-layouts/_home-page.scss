@@ -68,11 +68,11 @@
 
 .article__excerpt {
   margin-bottom: 15px;
-  font-size: 15px;
+  font-size: 19px;
   color: rgba($white, .8);
   @media only screen and (max-width: $mobile) {
     margin-bottom: 10px;
-    font-size: 13px;
+    font-size: 17px;
     line-height: 21px;
   }
 }

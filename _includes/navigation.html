@@ -6,7 +6,7 @@
     {% unless page.name == 'tags.html' or page.name == '404.html' or page.navigation_exclude %}
       {% if page.title %}
       <li class="nav__item">
-        <a href="{{ page.url | prepend: site.baseurl }}" class="nav__link">{{ page.title }}</a>
+        <a href="{{ page.url | prepend: site.baseurl }}" class="nav__link">{{ page.navigation_title | default: page.title }}</a>
       </li>
       {% endif %}
     {% endunless %}
