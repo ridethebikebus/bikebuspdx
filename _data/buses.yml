@@ -93,9 +93,9 @@
   map_alt: James John Bike Bus Route Map (English)
   map_image2: /assets/images/routes/route-james-john.es.jpg
   map_alt2: James John Bike Bus Route Map (Spanish)
-- name: Lents
-  slug: lents
-  map_image: /assets/images/routes/route-lents.jpg
+- name: Lent
+  slug: lent
+  map_image: /assets/images/routes/route-lent.jpg
 - name: Maplewood
   slug: maplewood
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.470737,-122.720523,15.56z
