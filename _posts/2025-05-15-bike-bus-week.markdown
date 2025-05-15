@@ -4,7 +4,7 @@ title:  Bike Bus Week! May 19-23
 date:   2025-05-15 12:00:00 -0800
 author:
   name: BikeBusPDX
-image: /assets/images/bikebusbill-2.png
+image: /assets/images/bike-bus-week.png
 ---
 
 Bike Buses are a student-powered movement transforming how families get to school — building safety, joy, health, and stronger neighborhoods.
