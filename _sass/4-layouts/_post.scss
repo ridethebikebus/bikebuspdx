@@ -246,7 +246,7 @@
       font-family: $heading-font-family;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: rgba($text-color, .8);
+      color: rgba($white, .8);
     }
 
     .post__nav-box {
@@ -258,8 +258,9 @@
     .post__nav__title {
       margin-bottom: 0;
       font-size: 21px;
+      color: $white;
       a {
-        color: $text-color;
+        color: $white;
       }
     }
   }
