@@ -4,9 +4,9 @@
 # content: Optional. Markdown content to render above the links.
 # link_text: Optional. Text for the top link.
 # link_href: Optional: Href for the top link.
-# image: Optional. Path to image, like /assets/images/mybikebus.jpg.
+# image: Optional. Path to image, like /assets/images/mybikebus.webp.
 # map_href: Required: Href for the 'Route Map' link and when you click on the route image.
-# map_image: Optional. Default to /assets/images/route-{slug}.png.
+# map_image: Optional. Default to /assets/images/route-{slug}.webp.
 #   If using a different route image (like a jpeg), set this.
 #
 # These fields are all optional, and used for social links:
@@ -21,24 +21,24 @@
   email: CoachBalto@gmail.com
   slug: alameda
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.54595,-122.62335,15.01z
-  image: /assets/images/Alameda-Elementary-School-Bike-Bus-14.jpg
+  image: /assets/images/Alameda-Elementary-School-Bike-Bus-14.webp
   content: |
     Email for more info.
 - name: Abernethy
   slug: abernethy
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.50627,-122.64591,14.36z
   instagram: abernethybikebus
-  image: /assets/images/abernethy-bike-bus-2.jpg
+  image: /assets/images/abernethy-bike-bus-2.webp
 - name: Atkinson
   slug: atkinson
   instagram: atkinsonbikebus
-  map_image: /assets/images/routes/route-atkinson.jpg
+  map_image: /assets/images/routes/route-atkinson.webp
   map_alt: Atkinson Bike Bus Route Map
   content: |
     Riding Wednesday mornings!
 - name: Beach
   slug: beach
-  map_image: /assets/images/routes/route-beach.png
+  map_image: /assets/images/routes/route-beach.webp
   map_href: https://www.google.com/maps/d/u/0/viewer?hl=en&ll=45.555662386072505%2C-122.68208815000001&z=15&mid=1XzSYhdnc6okk3jOFzXiONBJYcYKPCSY
   instagram: beachbiketrain
   email: transportation@overlookneighborhood.org
@@ -48,7 +48,7 @@
     trees at Castle and N Overlook Blvd.
 - name: Bevery Cleary
   slug: bevery-cleary
-  map_image: /assets/images/routes/route-bevery-cleary.jpg
+  map_image: /assets/images/routes/route-bevery-cleary.webp
   map_href: https://beverlyclearyschoolpta.membershiptoolkit.com/bike-bus
   email: BCSBikeBus@gmail.com
   link_text: Website
@@ -68,7 +68,7 @@
   link_text: Signup Form
   link_href: https://docs.google.com/forms/d/e/1FAIpQLScwa_GjElUGTrAbOgEjXNjryGy4GFNYNGZEXzCD8_NteFQZIw/viewform?usp=sharing
   map_href: https://www.google.com/maps/d/u/0/edit?mid=1UJIqiJMy9wE9QmA3Eqd9ediZyTuG4jk&ll=45.49434660711144%2C-122.6046248&z=16
-  image: /assets/images/creston-bike-bus-1.jpg
+  image: /assets/images/creston-bike-bus-1.webp
   email: anti.mle@gmail.com
   instagram: crestoneaglesbikebus
 - name: da Vinci
@@ -78,8 +78,8 @@
 - name: Glencoe
   slug: glencoe
   map_href: https://felt.com/map/Glencoe-Bike-Bus-Map-PWlgBEQ6SPSxlMQKRPfsAD
-  map_image: /assets/images/routes/route-glencoe.jpg
-  image: /assets/images/glencoe-bike-bus-1.jpg
+  map_image: /assets/images/routes/route-glencoe.webp
+  image: /assets/images/glencoe-bike-bus-1.webp
   email: glencoebikebus@gmail.com
   instagram: glencoebikebus
   content: |
@@ -89,20 +89,20 @@
   link_text: James John Bike Bus Homepage
   link_href: https://linkpages.pro/A9OFjO
   email: jamesjohnbikebus@gmail.com
-  map_image: /assets/images/routes/route-james-john.en.jpg
+  map_image: /assets/images/routes/route-james-john.en.webp
   map_alt: James John Bike Bus Route Map (English)
-  map_image2: /assets/images/routes/route-james-john.es.jpg
+  map_image2: /assets/images/routes/route-james-john.es.webp
   map_alt2: James John Bike Bus Route Map (Spanish)
 - name: Lent
   slug: lent
-  map_image: /assets/images/routes/route-lent.jpg
+  map_image: /assets/images/routes/route-lent.webp
 - name: Maplewood
   slug: maplewood
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.470737,-122.720523,15.56z
 - name: Metzger
   slug: metzger
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.448305,-122.758826,15.11z
-  image: /assets/images/metzger-bike-bus.jpg
+  image: /assets/images/metzger-bike-bus.webp
   instagram: metzgerbikebus
 - name: Rigler
   slug: rigler
@@ -122,7 +122,7 @@
 - name: Vestal
   slug: vestal
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.530081,-122.581037,15.45z
-  image: /assets/images/vestal-tallbikes.jpg
+  image: /assets/images/vestal-tallbikes.webp
   instagram: vestalpta
 - name: Woodstock
   slug: woodstock
