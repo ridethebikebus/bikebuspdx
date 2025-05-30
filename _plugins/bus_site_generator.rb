@@ -15,7 +15,7 @@ module Bikebuspdx
           file.data['image'] = bus['image'] if bus['image']
           include_data = bus.dup
           include_data['email'] = bus['email'] || "#{slug}@bikebuspdx.org"
-          include_data['map_image'] = bus['map_image'] || "/assets/images/routes/route-#{slug}.png"
+          include_data['map_image'] = bus['map_image'] || "/assets/images/routes/route-#{slug}.webp"
           include_data['map_alt'] = bus['map_alt'] || "#{name} Bike Bus Route Map"
           kvps = include_data.map { |k, v| "#{k}='#{v}' " }.join(' ')
           file.content = "{% include bus-minisite-content.html #{kvps} %}"
