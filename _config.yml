@@ -50,6 +50,9 @@ social:
 # Google Analytics
 # google-analytics: # Add your identifier. For example UA-99631805-1.
 
+#-------------------------------
+# Goat Analytics
+goat-analytics: bikebuspdx # Add your code.
 
 #-------------------------------
 # Newsletter
