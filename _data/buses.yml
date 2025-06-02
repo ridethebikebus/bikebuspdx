@@ -33,9 +33,9 @@
   slug: atkinson
   instagram: atkinsonbikebus
   map_image: /assets/images/routes/route-atkinson.jpg
-  map_alt: Atkinson Bike Bus Route Map
+  map_href: https://www.google.com/maps/d/u/0/embed?mid=1tBE-e4irmU5wYU8jLVID6Vwzfmixe7c&ehbc=2E312F&ll=45.50340031703535%2C-122.59635592113287&z=15
   content: |
-    Riding Wednesday mornings!
+    Riding Wednesday mornings! See Route Map link for times.
 - name: Beach
   slug: beach
   map_image: /assets/images/routes/route-beach.png
