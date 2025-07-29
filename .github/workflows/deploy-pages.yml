@@ -3,6 +3,9 @@ name: Deploy site to Pages
 on:
   push:
     branches: ["main"]
+  repository_dispatch:
+    types:
+      - webhook
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
