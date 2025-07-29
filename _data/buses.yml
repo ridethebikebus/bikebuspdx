@@ -2,21 +2,16 @@
 # name: Required. Name of the bike bus, like 'Alameda'
 # slug: Required. Short slug for the URL and other purposes.
 # content: Optional. Markdown content to render above the links.
-# link_text: Optional. Text for the top link.
+# link_text: Optional. Text for the top link. Usually 'Website' or 'Signup Form'.
 # link_href: Optional: Href for the top link.
 # image: Optional. Path to image, like /assets/images/mybikebus.jpg.
 # map_href: Required: Href for the 'Route Map' link and when you click on the route image.
 # map_image: Optional. Default to /assets/images/route-{slug}.png.
 #   If using a different route image (like a jpeg), set this.
-#
-# These fields are all optional, and used for social links:
-# - email: mybikebus@gmail.com
-# - mastodon_handle: mybikebus.myserver.org (only used for display)
-# - mastodon_href: Href to your user on your server.
-# - instagram: mybikebus
-# - twitter: mybikebus (no @)
-# - tiktok: mybikebus (no @)
-# - facebook: mybikebus
+# map_image2: Optional, usually an alternative language for map_image.
+# email: mybikebus@gmail.com
+# instagram: mybikebus
+# bluesky: mybikebus
 - name: Alameda
   email: CoachBalto@gmail.com
   slug: alameda

@@ -5,11 +5,8 @@
     {% if include.link_text %}<li><i class="fa-solid fa-link"></i> <a href="{{ include.link_href }}">{{ include.link_text }}</a></li>{% endif %}
     {% if include.map_href %}<li><i class="fa-solid fa-map"></i> <a href="{{ include.map_href }}">Route Map</a></li>{% endif %}
     {% if include.email %}<li><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ include.email }}">{{ include.email }}</a></li>{% endif %}
-    {% if include.mastodon_handle %}<li><i class="fa-brands fa-mastodon"></i> <a href="{{ include.mastodon_href }}">@{{ include.mastodon_handle }}</a></li>{% endif %}
+    {% if include.bluesky %}<li><i class="fa-brands fa-bluesky"></i> <a href="https://bsky.app/profile/{{ include.bluesky }}">@{{ include.bluesky }}</a></li>{% endif %}
     {% if include.instagram %}<li><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/{{ include.instagram }}">@{{ include.instagram }}</a></li>{% endif %}
-    {% if include.twitter %}<li><i class="fa-brands fa-twitter"></i> <a href="https://x.com/{{ include.twitter }}">@{{ include.twitter }}</a></li>{% endif %}
-    {% if include.tiktok %}<li><i class="fa-brands fa-tiktok"></i> <a href="https://tiktok.com/@{{ include.tiktok }}">@{{ include.tiktok }}</a></li>{% endif %}
-    {% if include.facebook %}<li><i class="fa-brands fa-facebook-f"></i> <a href="https://facebook.com/{{ include.facebook }}">{{ include.facebook }}</a></li>{% endif %}
 </ul>
 
 <a href="{% if include.map_href %}{{ include.map_href }}{% else %}{{ include.link_href }}{% endif %}">
