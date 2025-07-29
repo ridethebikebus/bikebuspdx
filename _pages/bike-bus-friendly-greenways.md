@@ -2,7 +2,7 @@
 title: Support the Bike Bus Friendly Neighborhood Greenways Pilot
 permalink: /bike-bus-friendly-greenways
 description: Read and sign our resolution request today.
-image: /assets/images/bike-bus-modal-filter.jpg
+image: /assets/images/bike-bus-modal-filter.webp
 layout: page
 navigation_title: Support Bike Bus Friendly Greenways
 ---

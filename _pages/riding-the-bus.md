@@ -2,7 +2,7 @@
 title: Riding on the Bike Bus
 permalink: /riding-on-the-bike-bus
 description: Joining is easy- just show up and ride!
-image: /assets/images/abernethy-bike-bus-2.jpg
+image: /assets/images/abernethy-bike-bus-2.webp
 layout: page
 ---
 

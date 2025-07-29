@@ -19,7 +19,7 @@ url: "" # The base hostname & protocol for your site, e.g. http://example.com
 hero:
   title: Bike Bus PDX
   description: Portland Rocks!
-  image: '/assets/images/hero.jpg'
+  image: '/assets/images/hero.webp'
 
 
 #-------------------------------
