@@ -14,6 +14,7 @@ module Bikebuspdx
     def generate(site)
       rows = fetch_webhookdb_rows
       merged = merge_data(site.data.fetch('buses'), rows)
+      merged.delete_if { |h| (h['unlist'] || '').length > 0 }
       merged.each { |h| rehost_images(h) }
       site.data['buses'] = merged
       dir = '_pages/buses'
@@ -137,13 +138,14 @@ module Bikebuspdx
                 WHEN questions->>'school' != '' THEN questions->>'school'
                 ELSE questions->>'schooltext' END
                 AS name,
-            questions->'maintext' as content,
-            questions->'websitelabel' as link_text,
-            questions->'websitelink' as link_href,
+            questions->>'maintext' as content,
+            questions->>'websitelabel' as link_text,
+            questions->>'websitelink' as link_href,
             questions->'headerimage'->>0 as image,
             questions->'image1'->>0 as map_image,
             questions->'image2'->>0 as map_image2,
-            questions->'routemaplink' as map_href,
+            questions->>'routemaplink' as map_href,
+            questions->>'unlist' as unlist,
             questions->>'bluesky' as bluesky,
             questions->>'instagram' as instagram
         FROM #{webhookdb_table}

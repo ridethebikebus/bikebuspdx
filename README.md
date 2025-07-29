@@ -39,6 +39,9 @@ Images on the Jotform are downloaded and re-hosted in this repo (as compressed w
 Note that the images are checked in, because we may need to delete Jotform reponses,
 which would delete the uploaded images.
 
+The form has an 'unlist' question; if the answer is non-empty,
+the bus is not listed on the website any longer.
+
 ## Original Theme
 
 This site originally used the Aditu theme. It's been customized heavily but referring to the original
