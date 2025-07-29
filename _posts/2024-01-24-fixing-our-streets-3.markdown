@@ -4,7 +4,7 @@ title:  Fixing Our Streets 3
 date:   2024-01-24 12:00:00 -0800
 author:
   name: BikeBusPDX
-image: /assets/images/fixing-our-streets-jan-2024-presser-sam.jpg
+image: /assets/images/fixing-our-streets-jan-2024-presser-sam.webp
 ---
 
 Earlier today, FOUR Portland Bike Bus leaders were at City Hall supporting the Portland Bureau of Transportation's

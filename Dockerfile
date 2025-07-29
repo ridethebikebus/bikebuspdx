@@ -1,10 +1,11 @@
 FROM ruby:3.2.3
 
+RUN apt-get update && apt-get install -y webp && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /build
 COPY .ruby-gemset .
 COPY .ruby-version .
 COPY Gemfile .
-COPY Gemfile.lock .
 RUN bundle install
 
 WORKDIR /app

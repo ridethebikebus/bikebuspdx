@@ -4,7 +4,7 @@ title:  Running for local government? Ride the Bike Bus!
 date:   2024-04-10 12:00:00 -0800
 author:
   name: BikeBusPDX
-image: /assets/images/council-bike-bus.jpg
+image: /assets/images/council-bike-bus.webp
 ---
 
 This year, Portlanders are electing a new City Council of twelve, a Mayor,

@@ -18,6 +18,11 @@ Each bus gets a site at `/<slug>`. So the Alameda Bike Bus site is at `/alameda`
 
 The code for this is in `_plugins/bus_site_generator.rb`.
 
+## Optimize Images
+
+Run `make optimize-images` to build webp files for every file in `assets/images`.
+This is done through the container so does not require any local executables.
+
 ## Original Theme
 
 This site originally used the Aditu theme. It's been customized heavily but referring to the original

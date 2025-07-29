@@ -4,7 +4,7 @@ title:  Hello Portland!
 date:   2024-01-22 12:00:00 -0800
 author:
   name: BikeBusPDX
-image: /assets/images/Alameda-Elementary-School-Bike-Bus-3.jpg
+image: /assets/images/Alameda-Elementary-School-Bike-Bus-3.webp
 ---
 
 To add or edit your Bike Bus on the BikeBusPDX.org website, email [ride@bikebuspdx.org](mailto:ride@bikebuspdx.org).
