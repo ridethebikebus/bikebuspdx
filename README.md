@@ -1,6 +1,6 @@
 # Bike Bus PDX
 
-Run `make run-local` to run the site through Docker.
+Run `make serve` to run the site through Docker.
 This means you need Docker, but you don't need to worry about Ruby.
 
 Open a browser to <http://localhost:22030> (you can remember the port because of the 2030 Bike Plan).

@@ -1,11 +1,15 @@
+require 'fileutils'
 require 'net/http'
+require 'tempfile'
+require_relative '../bikebuspdx/webp'
 
 module Bikebuspdx
   class BusSiteGenerator < Jekyll::Generator
 
     def generate(site)
-      rows = make_request
+      rows = fetch_webhookdb_rows
       merged = merge_data(site.data.fetch('buses'), rows)
+      merged.each { |h| rehost_images(h) }
       site.data['buses'] = merged
       dir = '_pages/buses'
       site.data['buses'].each do |bus|
@@ -56,28 +60,56 @@ module Bikebuspdx
       end
     end
 
-    def make_request
+    def rehost_images(h)
+      ['image', 'map_image', 'map_image2'].each do |k|
+        link = h[k]
+        needs_rehost = link && link =~ /^https?:\/\//
+        next unless needs_rehost
+        res = get_url(link)
+        out_path = "assets/autoimages/#{h.fetch('slug')}/#{k}.webp"
+        Jekyll.logger.info :bikebusgen, "rehosting #{link}"
+        FileUtils.mkdir_p(File.dirname(out_path))
+        Tempfile.create(File.basename(link), binmode: true) do |f|
+          f.write(res.body)
+          f.flush
+          Bikebuspdx::Webp.compress!(f.path, out_path)
+        end
+        h[k] = "/#{out_path}"
+      end
+    end
+
+    def fetch_webhookdb_rows
       url = "https://api.webhookdb.com/v1/db/run_sql" +
             "?query_base64=" + URI.encode_uri_component(Base64.strict_encode64(self.select_sql)) +
             "&org_identifier=" + URI.encode_uri_component(self.webhookdb_org)
+      res = get_url(
+        url,
+        headers: {'Accept' => 'application/json', 'Whdb-Sha256-Conn' => self.webhookdb_hash},
+      )
+      body = JSON.parse(res.body)
+      headers = body.fetch('headers')
+      rows = body.fetch('rows').map { |r| headers.each_with_index.map { |h, i| [h, r[i]] }.to_h }
+      rows
+    end
+
+    def get_url(url, headers: {}, limit: 10)
+      raise ArgumentError, "HTTP redirect too deep: #{url}" if limit == 0
+
       uri = URI(url)
       req = Net::HTTP::Get.new(uri)
-      req['Accept'] = 'application/json'
-      req['Whdb-Sha256-Conn'] = self.webhookdb_hash
+      headers.each do |k, v|
+        req[k] = v
+      end
       req['User-Agent'] = 'bikebuspdx.org website generator'
 
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
         http.request(req)
       end
+      return get_url(res['location'], headers:, limit: limit - 1) if
+        res.is_a?(Net::HTTPRedirection)
 
-      if res.code.to_i >= 400
-        raise "Request to WebhookDB failed: #{res.code}: #{res.body}"
-      end
-
-      body = JSON.parse(res.body)
-      headers = body.fetch('headers')
-      rows = body.fetch('rows').map { |r| headers.each_with_index.map { |h, i| [h, r[i]] }.to_h }
-      rows
+      raise "Request to WebhookDB failed: #{res.code}: #{res.body}" if res.code.to_i >= 400
+      res
     end
 
     def webhookdb_table = @webhookdb_table ||= ENV.fetch('WEBHOOKDB_TABLE', 'jotform_webhook_v1_ce87')
