@@ -6,6 +6,8 @@ description: Transforming our communities and planet through the simple act of r
 baseurl: "" # The subpath of your site, e.g. /blog
 url: "" # The base hostname & protocol for your site, e.g. http://example.com
 
+exclude:
+  - .idea/
 
 #-------------------------------
 # Author Settings

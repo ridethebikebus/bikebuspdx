@@ -12,4 +12,4 @@ WORKDIR /app
 
 EXPOSE 22030
 ENTRYPOINT ["jekyll"]
-CMD ["serve", "--port", "22030", "--host", "0.0.0.0", "--watch", "--livereload", "--livereload-ignore", "assets/autoimages", "--drafts", "--future"]
+CMD ["serve", "--port", "22030", "--host", "0.0.0.0", "--watch", "--livereload", "--drafts", "--future"]

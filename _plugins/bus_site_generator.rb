@@ -5,6 +5,11 @@ require_relative '../bikebuspdx/webp'
 
 module Bikebuspdx
   class BusSiteGenerator < Jekyll::Generator
+    class << self
+      # We only want to fetch data and images on the first build.
+      # Otherwise it takes way too long when iterating on the site.
+      attr_accessor :built_dynamic
+    end
 
     def generate(site)
       rows = fetch_webhookdb_rows
@@ -83,6 +88,7 @@ module Bikebuspdx
         Jekyll.logger.warn :bikebusgen, "WEBHOOKDB_CONNECTION_URL not configured, falling back to static content only."
         return []
       end
+      return [] if self.class.built_dynamic
       url = "https://api.webhookdb.com/v1/db/run_sql" +
             "?query_base64=" + URI.encode_uri_component(Base64.strict_encode64(self.select_sql)) +
             "&org_identifier=" + URI.encode_uri_component(self.webhookdb_org)
@@ -93,6 +99,7 @@ module Bikebuspdx
       body = JSON.parse(res.body)
       headers = body.fetch('headers')
       rows = body.fetch('rows').map { |r| headers.each_with_index.map { |h, i| [h, r[i]] }.to_h }
+      self.class.built_dynamic = true
       rows
     end
 
