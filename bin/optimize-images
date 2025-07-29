@@ -2,26 +2,15 @@
 
 require 'open3'
 require "pathname"
+require_relative '../bikebuspdx/webp'
 
-QUALITY = 85
-FLAGS = ""
 
 images = Pathname("assets/images").children + Pathname("assets/images/routes").children
 ext = ['.png', '.jpg', '.jpeg']
 images.each do |image|
   next unless ext.any? { |e| image.to_s.end_with?(e) }
   outpath = image.sub_ext('.webp')
-  cmd = "cwebp -quiet -mt -q #{QUALITY.to_s} #{FLAGS} \"#{image.to_s}\" -o \"#{outpath.to_s}\""
-  exit_code = 0
-  error = ""
-  output = ""
-  Open3.popen3(cmd) do |stdin, stdout, stderr, wait_thr|
-    stdin.close # we don't pass any input to the process
-    output = stdout.gets
-    error = stderr.gets
-    exit_code = wait_thr.value
-  end
-
+  exit_code, output, error = Bikebuspdx::Webp.compress(image, outpath)
   if exit_code != 0
     puts "cwebp for #{image.to_s} failed with code: #{exit_code}\n#{output}\n#{error}"
     exit(exit_code)
