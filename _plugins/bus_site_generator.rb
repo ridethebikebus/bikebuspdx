@@ -79,6 +79,10 @@ module Bikebuspdx
     end
 
     def fetch_webhookdb_rows
+      if webhookdb_conn_url.nil?
+        Jekyll.logger.warn :bikebusgen, "WEBHOOKDB_CONNECTION_URL not configured, falling back to static content only."
+        return []
+      end
       url = "https://api.webhookdb.com/v1/db/run_sql" +
             "?query_base64=" + URI.encode_uri_component(Base64.strict_encode64(self.select_sql)) +
             "&org_identifier=" + URI.encode_uri_component(self.webhookdb_org)
@@ -114,9 +118,9 @@ module Bikebuspdx
 
     def webhookdb_table = @webhookdb_table ||= ENV.fetch('WEBHOOKDB_TABLE', 'jotform_webhook_v1_ce87')
     def webhookdb_org = @webhookdb_org ||= ENV.fetch('WEBHOOKDB_ORG', 'bikebuspdx')
-    def webhookdb_conn_url = @webhookdb_conn_url ||= ENV.fetch('WEBHOOKDB_CONNECTION_URL')
+    def webhookdb_conn_url = @webhookdb_conn_url ||= ENV.fetch('WEBHOOKDB_CONNECTION_URL', nil)
     def webhookdb_hash = @webhookdb_hash ||= Digest::SHA256.hexdigest(self.webhookdb_conn_url)
-    def form_update_secret = @form_update_secret ||= ENV.fetch('FORM_UPDATE_SECRET')
+    def form_update_secret = @form_update_secret ||= ENV.fetch('FORM_UPDATE_SECRET', nil)
 
     def select_sql
       @select_sql ||= <<~SQL
