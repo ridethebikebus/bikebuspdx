@@ -12,6 +12,7 @@
 # email: mybikebus@gmail.com
 # instagram: mybikebus
 # bluesky: mybikebus
+# unlist: If true, hide this bike bus. Generally used for the dynamic form data, to remove a school
 - name: Alameda
   email: CoachBalto@gmail.com
   slug: alameda
