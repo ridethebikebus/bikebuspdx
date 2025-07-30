@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'jekyll'
 require 'net/http'
 require 'tempfile'
 require_relative '../bikebuspdx/webp'
@@ -12,12 +13,14 @@ module Bikebuspdx
       attr_accessor :generated_images
     end
 
+    IMAGE_KEYS = ['image', 'map_image', 'map_image2']
+
     def generate(site)
       rows = fetch_webhookdb_rows
       merged = merge_data(site.data.fetch('buses'), rows)
       delete_unlisted(merged)
       clean_buses(merged)
-      rehost_images(merged)
+      rehost_images(site, merged)
       site.data['buses'] = merged
       # merged.each { |h| puts h if h['name'] == 'Winterhaven' }
       dir = '_pages/buses'
@@ -76,15 +79,17 @@ module Bikebuspdx
       end
     end
 
-    def rehost_images(data)
+    def rehost_images(site, data)
       return if self.class.generated_images
       data.each do |h|
-        ['image', 'map_image', 'map_image2'].each do |k|
+        IMAGE_KEYS.each do |k|
           link = h[k]
           needs_rehost = link && link =~ /^https?:\/\//
           next unless needs_rehost
           res = get_url(link)
-          out_path = "assets/autoimages/#{h.fetch('slug')}/#{k}.webp"
+          asset_rel_path = "autoimages/#{h.fetch('slug')}/#{k}.webp"
+          out_path = "assets/#{asset_rel_path}"
+          is_new = !File.exist?(out_path)
           Jekyll.logger.info :bikebusgen, "rehosting #{link} (status: #{res.code}, size: #{res.body.size}) to #{out_path}"
           FileUtils.mkdir_p(File.dirname(out_path))
           Tempfile.create(File.basename(link), binmode: true) do |f|
@@ -92,7 +97,10 @@ module Bikebuspdx
             f.flush
             Bikebuspdx::Webp.compress!(f.path, out_path)
           end
-
+          # If the output file did not exist when the build started, we need to explicitly add it as a static file,
+          # so it's copied to the _site build folder. Otherwise, the file is placed in the (source) assets directory,
+          # but not copied over to the build folder, so doesn't get included in production.
+          site.static_files << Jekyll::StaticFile.new(site, site.source, 'assets', asset_rel_path) if is_new
           h[k] = "/#{out_path}"
         end
       end
