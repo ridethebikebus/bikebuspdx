@@ -2,6 +2,7 @@ require 'fileutils'
 require 'jekyll'
 require 'net/http'
 require 'tempfile'
+require 'unicode_normalize/normalize'
 require_relative '../bikebuspdx/webp'
 
 module Bikebuspdx
@@ -51,8 +52,17 @@ module Bikebuspdx
     def clean_buses(data)
       data.each do |bus|
         bus.to_a.each { |(k, v)| bus.delete(k) if !v || v == "" }
-        bus['slug'] ||= bus.fetch('name').downcase.gsub(' ', '-')
+        bus['slug'] ||= to_slug(bus.fetch('name'))
       end
+    end
+
+    def to_slug(s)
+      slug = s.downcase.gsub(' ', '-')
+      # :nfkd decomposes the characters (e.g. à → a + ̀)
+      slug = slug.unicode_normalize(:nfkd)
+      # /\p{Mn}/ matches the diacritic marks, which are then removed
+      slug = slug.gsub(/\p{Mn}/, '')
+      slug
     end
 
     def merge_data(buses, rows)
@@ -122,7 +132,11 @@ module Bikebuspdx
       )
       body = JSON.parse(res.body)
       headers = body.fetch('headers')
-      rows = body.fetch('rows').map { |r| headers.each_with_index.map { |h, i| [h, r[i]] }.to_h }
+      rows = body.fetch('rows').map do |r|
+        row = headers.each_with_index.map { |h, i| [h, r[i]] }.to_h
+        (row['name'] = 'César Chávez') if row['name'] == 'Cesar Chavez'
+        row
+      end
       self.class.fetched_rows = rows
       rows
     end
