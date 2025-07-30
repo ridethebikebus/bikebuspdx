@@ -22,7 +22,6 @@ module Bikebuspdx
       exit_code, output, error = compress(inpath, outpath)
       raise "cwebp for #{inpath} failed with code: #{exit_code}\n#{output}\n#{error}" if
         exit_code != 0
-      Jekyll.logger.info :webp, "wrote #{outpath}"
     end
   end
 end

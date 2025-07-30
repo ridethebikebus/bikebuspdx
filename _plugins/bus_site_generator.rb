@@ -8,15 +8,18 @@ module Bikebuspdx
     class << self
       # We only want to fetch data and images on the first build.
       # Otherwise it takes way too long when iterating on the site.
-      attr_accessor :built_dynamic
+      attr_accessor :fetched_rows
+      attr_accessor :generated_images
     end
 
     def generate(site)
       rows = fetch_webhookdb_rows
       merged = merge_data(site.data.fetch('buses'), rows)
-      merged.delete_if { |h| (h['unlist'] || '').length > 0 }
-      merged.each { |h| rehost_images(h) }
+      delete_unlisted(merged)
+      clean_buses(merged)
+      rehost_images(merged)
       site.data['buses'] = merged
+      # merged.each { |h| puts h if h['name'] == 'Winterhaven' }
       dir = '_pages/buses'
       site.data['buses'].each do |bus|
         slug = bus.fetch('slug')
@@ -30,13 +33,22 @@ module Bikebuspdx
           )
           file.data['image'] = bus['image'] if bus['image']
           include_data = bus.dup
-          include_data['email'] = bus['email'] || "#{slug}@bikebuspdx.org"
-          include_data['map_image'] = bus['map_image'] || "/assets/images/routes/route-#{slug}.png"
           include_data['map_alt'] = bus['map_alt'] || "#{name} Bike Bus Route Map"
           kvps = include_data.map { |k, v| "#{k}='#{v}' " }.join(' ')
           file.content = "{% include bus-minisite-content.html #{kvps} %}"
           file.output
         end
+      end
+    end
+
+    def delete_unlisted(data)
+      data.delete_if { |h| (h['unlist'] || '').length > 0 }
+    end
+
+    def clean_buses(data)
+      data.each do |bus|
+        bus.to_a.each { |(k, v)| bus.delete(k) if !v || v == "" }
+        bus['slug'] ||= bus.fetch('name').downcase.gsub(' ', '-')
       end
     end
 
@@ -46,9 +58,7 @@ module Bikebuspdx
         name = row.fetch('name')
         h = (keyed_by_name[name] ||= {})
         h.merge!(row)
-        h['slug'] = name.downcase.gsub(' ', '-')
         set_socials(h)
-        h.keys.each { |k| h.delete(k) if h[k] == "" }
       end
       keyed_by_name.values
     end
@@ -66,22 +76,27 @@ module Bikebuspdx
       end
     end
 
-    def rehost_images(h)
-      ['image', 'map_image', 'map_image2'].each do |k|
-        link = h[k]
-        needs_rehost = link && link =~ /^https?:\/\//
-        next unless needs_rehost
-        res = get_url(link)
-        out_path = "assets/autoimages/#{h.fetch('slug')}/#{k}.webp"
-        Jekyll.logger.info :bikebusgen, "rehosting #{link}"
-        FileUtils.mkdir_p(File.dirname(out_path))
-        Tempfile.create(File.basename(link), binmode: true) do |f|
-          f.write(res.body)
-          f.flush
-          Bikebuspdx::Webp.compress!(f.path, out_path)
+    def rehost_images(data)
+      return if self.class.generated_images
+      data.each do |h|
+        ['image', 'map_image', 'map_image2'].each do |k|
+          link = h[k]
+          needs_rehost = link && link =~ /^https?:\/\//
+          next unless needs_rehost
+          res = get_url(link)
+          out_path = "assets/autoimages/#{h.fetch('slug')}/#{k}.webp"
+          Jekyll.logger.info :bikebusgen, "rehosting #{link} (status: #{res.code}, size: #{res.body.size}) to #{out_path}"
+          FileUtils.mkdir_p(File.dirname(out_path))
+          Tempfile.create(File.basename(link), binmode: true) do |f|
+            f.write(res.body)
+            f.flush
+            Bikebuspdx::Webp.compress!(f.path, out_path)
+          end
+
+          h[k] = "/#{out_path}"
         end
-        h[k] = "/#{out_path}"
       end
+      self.class.generated_images = true
     end
 
     def fetch_webhookdb_rows
@@ -89,7 +104,7 @@ module Bikebuspdx
         Jekyll.logger.warn :bikebusgen, "WEBHOOKDB_CONNECTION_URL not configured, falling back to static content only."
         return []
       end
-      return [] if self.class.built_dynamic
+      return self.class.fetched_rows if self.class.fetched_rows
       url = "https://api.webhookdb.com/v1/db/run_sql" +
             "?query_base64=" + URI.encode_uri_component(Base64.strict_encode64(self.select_sql)) +
             "&org_identifier=" + URI.encode_uri_component(self.webhookdb_org)
@@ -100,7 +115,7 @@ module Bikebuspdx
       body = JSON.parse(res.body)
       headers = body.fetch('headers')
       rows = body.fetch('rows').map { |r| headers.each_with_index.map { |h, i| [h, r[i]] }.to_h }
-      self.class.built_dynamic = true
+      self.class.fetched_rows = rows
       rows
     end
 
@@ -146,6 +161,7 @@ module Bikebuspdx
             questions->'image2'->>0 as map_image2,
             questions->>'routemaplink' as map_href,
             questions->>'unlist' as unlist,
+            questions->>'email' as email,
             questions->>'bluesky' as bluesky,
             questions->>'instagram' as instagram
         FROM #{webhookdb_table}

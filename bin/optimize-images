@@ -10,6 +10,7 @@ ext = ['.png', '.jpg', '.jpeg']
 images.each do |image|
   next unless ext.any? { |e| image.to_s.end_with?(e) }
   outpath = image.sub_ext('.webp')
+  puts "compressing #{image} to #{outpath}"
   exit_code, output, error = Bikebuspdx::Webp.compress(image, outpath)
   if exit_code != 0
     puts "cwebp for #{image.to_s} failed with code: #{exit_code}\n#{output}\n#{error}"

@@ -15,26 +15,23 @@
 # unlist: If true, hide this bike bus. Generally used for the dynamic form data, to remove a school
 - name: Alameda
   email: CoachBalto@gmail.com
-  slug: alameda
+  map_image: /assets/images/routes/route-alameda.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.54595,-122.62335,15.01z
   image: /assets/images/Alameda-Elementary-School-Bike-Bus-14.webp
   content: |
     Email for more info.
 - name: Abernethy
-  slug: abernethy
   map_image: /assets/images/abernethy-bike-bus-1.webp
   map_href: https://www.bikebuspdx.org
   instagram: abernethybikebus
   image: /assets/images/abernethy-bike-bus-2.webp
 - name: Atkinson
-  slug: atkinson
   instagram: atkinsonbikebus
   map_image: /assets/images/routes/route-atkinson.webp
   map_href: https://www.google.com/maps/d/u/0/embed?mid=1tBE-e4irmU5wYU8jLVID6Vwzfmixe7c&ehbc=2E312F&ll=45.50340031703535%2C-122.59635592113287&z=15
   content: |
     Riding Wednesday mornings! See Route Map link for times.
 - name: Beach
-  slug: beach
   map_image: /assets/images/routes/route-beach.png
   map_href: https://www.google.com/maps/d/u/0/viewer?hl=en&ll=45.555662386072505%2C-122.68208815000001&z=15&mid=1XzSYhdnc6okk3jOFzXiONBJYcYKPCSY
   instagram: beachbiketrain
@@ -44,7 +41,6 @@
     Killingsworth St/Concord Ave, and South leaves from the three big
     trees at Castle and N Overlook Blvd.
 - name: Bevery Cleary
-  slug: bevery-cleary
   map_image: /assets/images/routes/route-bevery-cleary.webp
   map_href: https://beverlyclearyschoolpta.membershiptoolkit.com/bike-bus
   email: BCSBikeBus@gmail.com
@@ -53,27 +49,26 @@
   content: |
     Departs every Wednesday morning at 8:10am, rain or shine!
     Check out the website for more info.
-- name: Cesar Chavez
-  slug: cesar-chavez
+- name: César Chávez
+  map_image: /assets/images/routes/route-cesar-chavez.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.586399,-122.71963,15.18z
   email: treasurer@cesarchavezpta.org
 - name: Chapman
-  slug: chapman
+  map_image: /assets/images/routes/route-chapman.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.53437,-122.69927,14.89z
 - name: Creston
-  slug: creston
   link_text: Signup Form
   link_href: https://docs.google.com/forms/d/e/1FAIpQLScwa_GjElUGTrAbOgEjXNjryGy4GFNYNGZEXzCD8_NteFQZIw/viewform?usp=sharing
+  map_image: /assets/images/routes/route-creston.webp
   map_href: https://www.google.com/maps/d/u/0/edit?mid=1UJIqiJMy9wE9QmA3Eqd9ediZyTuG4jk&ll=45.49434660711144%2C-122.6046248&z=16
   image: /assets/images/creston-bike-bus-1.webp
   email: anti.mle@gmail.com
   instagram: crestoneaglesbikebus
 - name: da Vinci
-  slug: da-vinci
+  map_image: /assets/images/routes/route-da-vinci.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.497235,-122.604792,15.67z
   email: christopherjrall@gmail.com
 - name: Glencoe
-  slug: glencoe
   map_href: https://felt.com/map/Glencoe-Bike-Bus-Map-PWlgBEQ6SPSxlMQKRPfsAD
   map_image: /assets/images/routes/route-glencoe.webp
   image: /assets/images/glencoe-bike-bus-1.webp
@@ -82,7 +77,6 @@
   content: |
     Riding every Wednesday morning, rain or shine!
 - name: James John
-  slug: james-john
   link_text: James John Bike Bus Homepage
   link_href: https://linkpages.pro/A9OFjO
   email: jamesjohnbikebus@gmail.com
@@ -91,36 +85,35 @@
   map_image2: /assets/images/routes/route-james-john.es.webp
   map_alt2: James John Bike Bus Route Map (Spanish)
 - name: Lent
-  slug: lent
   map_image: /assets/images/routes/route-lent.webp
 - name: Maplewood
-  slug: maplewood
+  map_image: /assets/images/routes/route-maplewood.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.470737,-122.720523,15.56z
 - name: Metzger
-  slug: metzger
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.448305,-122.758826,15.11z
   image: /assets/images/metzger-bike-bus.webp
   instagram: metzgerbikebus
+  map_image: /assets/images/routes/route-metzger.webp
 - name: Rigler
-  slug: rigler
+  map_image: /assets/images/routes/route-rigler.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.560811,-122.605387,15.22z
 - name: Richmond
-  slug: richmond
+  map_image: /assets/images/routes/route-richmond.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.50862,-122.6268,14.25z
 - name: Rose City Park
-  slug: rose-city-park
+  map_image: /assets/images/routes/route-rose-city-park.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.539736,-122.598669,15.16z
 - name: Sunnyside
-  slug: sunnyside
+  map_image: /assets/images/routes/route-sunnysize.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.514456,-122.63128,15.41z
 - name: Vernon
-  slug: vernon
+  map_image: /assets/images/routes/route-vernon.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.559758,-122.634528,15.52z
 - name: Vestal
-  slug: vestal
+  map_image: /assets/images/routes/route-vestal.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.530081,-122.581037,15.45z
   image: /assets/images/vestal-tallbikes.webp
   instagram: vestalpta
 - name: Woodstock
-  slug: woodstock
+  map_image: /assets/images/routes/route-woodstock.webp
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.482117,-122.611733,15.63z
