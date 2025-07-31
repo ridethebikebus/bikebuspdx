@@ -22,6 +22,7 @@ module Bikebuspdx
       delete_unlisted(merged)
       clean_buses(merged)
       rehost_images(site, merged)
+      merged.sort_by! { |b| b.fetch('slug')}
       site.data['buses'] = merged
       # merged.each { |h| puts h if h['name'] == 'Winterhaven' }
       dir = '_pages/buses'

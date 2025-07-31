@@ -40,8 +40,8 @@
     Departs every Friday at 7:40am. North routes leaves from N
     Killingsworth St/Concord Ave, and South leaves from the three big
     trees at Castle and N Overlook Blvd.
-- name: Bevery Cleary
-  map_image: /assets/images/routes/route-bevery-cleary.webp
+- name: Beverly Cleary
+  map_image: /assets/images/routes/route-beverly-cleary.webp
   map_href: https://beverlyclearyschoolpta.membershiptoolkit.com/bike-bus
   email: BCSBikeBus@gmail.com
   link_text: Website
