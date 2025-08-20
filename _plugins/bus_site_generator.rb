@@ -135,7 +135,11 @@ module Bikebuspdx
       headers = body.fetch('headers')
       rows = body.fetch('rows').map do |r|
         row = headers.each_with_index.map { |h, i| [h, r[i]] }.to_h
-        (row['name'] = 'César Chávez') if row['name'] == 'Cesar Chavez'
+        if (name = row['name']) == 'Cesar Chavez'
+          row['name'] = 'César Chávez'
+        elsif name[0].downcase == name[0]
+          row['name'] = name[0].upcase + name[1..]
+        end
         row
       end
       self.class.fetched_rows = rows
@@ -171,7 +175,7 @@ module Bikebuspdx
     def select_sql
       @select_sql ||= <<~SQL
         SELECT
-            DISTINCT ON (questions->>'school', questions->>'schooltext')
+            DISTINCT ON (lower(questions->>'school'), lower(questions->>'schooltext'))
             CASE
                 WHEN questions->>'school' != '' THEN questions->>'school'
                 ELSE questions->>'schooltext' END
@@ -189,7 +193,7 @@ module Bikebuspdx
             questions->>'instagram' as instagram
         FROM #{webhookdb_table}
         WHERE questions->>'password' = '#{form_update_secret}'
-        ORDER BY questions->>'school', questions->>'schooltext', submit_date DESC
+        ORDER BY lower(questions->>'school'), lower(questions->>'schooltext'), submit_date DESC
       SQL
     end
   end
