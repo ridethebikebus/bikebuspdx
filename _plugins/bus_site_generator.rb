@@ -97,10 +97,11 @@ module Bikebuspdx
           link = h[k]
           needs_rehost = link && link =~ /^https?:\/\//
           next unless needs_rehost
-          res = get_url(link)
           asset_rel_path = "autoimages/#{h.fetch('slug')}/#{k}.webp"
           out_path = "assets/#{asset_rel_path}"
           is_new = !File.exist?(out_path)
+          next if !is_new && self.use_local_images
+          res = get_url(link)
           Jekyll.logger.info :bikebusgen, "rehosting #{link} (status: #{res.code}, size: #{res.body.size}) to #{out_path}"
           FileUtils.mkdir_p(File.dirname(out_path))
           Tempfile.create(File.basename(link), binmode: true) do |f|
@@ -162,7 +163,7 @@ module Bikebuspdx
       return get_url(res['location'], headers:, limit: limit - 1) if
         res.is_a?(Net::HTTPRedirection)
 
-      raise "Request to WebhookDB failed: #{res.code}: #{res.body}" if res.code.to_i >= 400
+      raise "Request to #{url} failed: #{res.code}: #{res.body}" if res.code.to_i >= 400
       res
     end
 
@@ -171,6 +172,10 @@ module Bikebuspdx
     def webhookdb_conn_url = @webhookdb_conn_url ||= ENV.fetch('WEBHOOKDB_CONNECTION_URL', nil)
     def webhookdb_hash = @webhookdb_hash ||= Digest::SHA256.hexdigest(self.webhookdb_conn_url)
     def form_update_secret = @form_update_secret ||= ENV.fetch('FORM_UPDATE_SECRET', nil)
+    # True to use local copies of images. Should only be used locally during development
+    # to avoid pulling images every time the server starts.
+    # Do not use in production, since it'd potentially cause stale images to be used.
+    def use_local_images = @use_local_images ||= ENV.fetch('USE_LOCAL_IMAGES', nil)
 
     def select_sql
       @select_sql ||= <<~SQL
