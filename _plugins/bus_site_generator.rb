@@ -4,6 +4,7 @@ require 'net/http'
 require 'tempfile'
 require 'unicode_normalize/normalize'
 require_relative '../bikebuspdx/webp'
+require 'addressable/uri'
 
 module Bikebuspdx
   class BusSiteGenerator < Jekyll::Generator
@@ -126,7 +127,7 @@ module Bikebuspdx
       end
       return self.class.fetched_rows if self.class.fetched_rows
       url = "https://api.webhookdb.com/v1/db/run_sql" +
-            "?query_base64=" + URI.encode_uri_component(Base64.strict_encode64(self.select_sql)) +
+            "?query_base64=" + Base64.urlsafe_encode64(self.select_sql) +
             "&org_identifier=" + URI.encode_uri_component(self.webhookdb_org)
       res = get_url(
         url,
@@ -149,7 +150,8 @@ module Bikebuspdx
 
     def get_url(url, headers: {}, limit: 10)
       raise ArgumentError, "HTTP redirect too deep: #{url}" if limit == 0
-
+      # Jotform location header can return utf-8, rather than ascii, so normalize it to a valid url.
+      url = Addressable::URI.parse(url).normalize.to_s
       uri = URI(url)
       req = Net::HTTP::Get.new(uri)
       headers.each do |k, v|
