@@ -6,6 +6,7 @@ WORKDIR /build
 COPY .ruby-gemset .
 COPY .ruby-version .
 COPY Gemfile .
+COPY Gemfile.lock .
 RUN bundle install
 
 WORKDIR /app
