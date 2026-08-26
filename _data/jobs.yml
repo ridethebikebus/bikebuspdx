@@ -1,0 +1,81 @@
+# Open positions listed on /jobs.
+#
+# Keys are:
+# title: Required. Name of the role, like 'Bike Bus Coordinator'.
+# slug: Required. Short slug for the URL, e.g. 'bike-bus-pdx-coordinator'
+#   gives a detail page at /jobs/bike-bus-pdx-coordinator.
+# org: Optional. Hiring org line, like 'Bike Bus PDX / Cascadia Action'.
+# location: Optional. Defaults to 'Portland, Oregon'.
+# compensation: Optional. Salary range or rate.
+# schedule: Optional. Working hours.
+# term: Optional. Funding/duration note.
+# description: Required. Markdown blurb describing the role.
+# responsibilities: Optional. List of markdown bullet points.
+# qualifications: Optional. List of {name, description} pairs.
+# preferred: Optional. Markdown blurb of nice-to-haves.
+# email: Optional. Where to apply. Defaults to jobs@bikebuspdx.org.
+# subject: Optional. Required subject line for the application email.
+# deadline: Optional. Date applications are accepted through, e.g.
+#   'September 15, 2026'. Rendered with an 'open until filled' note.
+# apply: Optional. Markdown instructions for how to apply.
+# note: Optional. Markdown fine print shown at the end of the listing.
+# unlist: Optional. If true, hide this role without deleting it.
+- title: Bike Bus Coordinator
+  slug: bike-bus-pdx-coordinator
+  org: Bike Bus PDX / Cascadia Action
+  location: East Portland, Oregon
+  compensation: $63K-$65K annually
+  schedule: M-F 9-5; occasional work before 9am, after 5pm, and weekends required
+  term: Grant-funded through 6/30/2029, with the possibility of extension
+  email: jobs@bikebuspdx.org
+  subject: Coordinator
+  description: |
+    The Bike Bus Coordinator is the backbone of Bike Bus PDX's emerging East
+    Portland bike bus programs! This position will work closely with families,
+    school staff, school districts and community-based organizations to plan,
+    implement and evaluate bike buses.
+  responsibilities:
+    - '**Collaborate** with school staff (social workers, counselors, principals), Bike Bus Champions (compensated school-based coordinators) and the PTA to build relationships with families and deliver a community-responsive bike bus program'
+    - '**Recruit** and **train** Bike Bus Champions and volunteers at each school'
+    - '**Develop** culturally-responsive student engagement programming'
+    - '**Design** and **ride** each bike bus route regularly, working with Champions to address issues, relaying safety concerns to city and state stakeholders'
+    - '**Coordinate** with the Bike Bus Liaison to develop and deliver school and family outreach materials such as flyers, newsletters and digital materials.'
+    - '**Collaborate** with PE teachers and school admin to deliver bike education bicycle fleets'
+    - '**Maintain** ride supplies and gear'
+    - '**Organize** and **execute** biannual school-based bike swaps and fairs'
+    - "**Integrate** best practices into an open-source 'Bike Bus Toolkit'"
+  qualifications:
+    - name: Equity-Focused Organizer
+      description: |
+        Your heart is in coordinating programs that center families and/or school
+        communities that have been historically underserved. Evidence matters
+        more than job titles.
+    - name: Experienced Cyclist
+      description: |
+        You are confident assisting with group bicycle rides that include children
+        and designing routes within urban settings.
+    - name: Creative Problem Solver
+      description: |
+        You anticipate bumps in the road, and know what and who to collaborate
+        with to get the job done in a fast-paced and time-sensitive environment.
+    - name: Punctual Morning Person
+      description: |
+        You are an early bird who ensures that everyone arrives where they need
+        to be by the ring of the first bell. You bring your all to early morning
+        weekday programs, in addition to occasional weekend events.
+    - name: Detail-Oriented
+      description: |
+        You are adept at tracking project details, expense reimbursements, and
+        equipment logistics.
+  preferred: |
+    Bilingual in English/Spanish, lived experience in the communities we serve;
+    experience with Safe Routes to School or active transportation, bike mechanic
+    skills; First Aid & CPR certifications. *We expect strong candidates to be
+    missing some of this.* **If the core of the role fits you, apply.**
+  deadline: September 15, 2026
+  apply: |
+    To apply, please send an email with your cover letter, resume, and the
+    subject line "Coordinator".
+  note: |
+    This job description is intended to describe the general nature of the role
+    and is not a comprehensive list of all duties or responsibilities.
