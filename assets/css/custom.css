@@ -40,3 +40,100 @@
   margin-bottom: 10px !important;
   height: unset !important;
 }
+/* Jobs pages */
+.job-card {
+  border-top: 2px solid #c6c6c6;
+  padding-top: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+}
+
+.job-card__title {
+  margin-bottom: 0;
+}
+
+.job-card__meta {
+  margin-bottom: var(--spacing-2);
+}
+
+.job-card__meta .pill {
+  cursor: default;
+}
+
+.job-card__description p:last-child {
+  margin-bottom: var(--spacing-2);
+}
+
+.job__deadline {
+  margin-bottom: var(--spacing-2);
+  font-weight: 600;
+}
+
+.job__org {
+  color: #757575;
+  margin-bottom: var(--spacing-2);
+}
+
+.job__heading {
+  margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-1);
+}
+
+.job__facts {
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.job__facts dt {
+  float: left;
+  clear: left;
+  width: 9em;
+  font-weight: 600;
+}
+
+.job__facts dd {
+  margin-left: 9em;
+  margin-bottom: var(--spacing-1);
+}
+
+@media only screen and (max-width: 600px) {
+  .job__facts dt { float: none; width: auto; }
+  .job__facts dd { margin-left: 0; }
+}
+
+.job__description p:last-child,
+.job__preferred p:last-child,
+.job__apply p:last-child {
+  margin-bottom: var(--spacing-2);
+}
+
+.job__responsibilities,
+.job__qualifications {
+  margin-bottom: var(--spacing-2);
+}
+
+.job__note,
+.job__eeo {
+  font-size: 15px;
+  color: #757575;
+  margin-top: var(--spacing-3);
+}
+
+/* Footer funding attribution (sits in the footer info widget) */
+.footer-funding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+}
+
+.footer-funding__logo {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-funding__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(16, 17, 19, 0.6);
+}

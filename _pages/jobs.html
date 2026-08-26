@@ -1,0 +1,69 @@
+---
+title: Jobs
+permalink: /jobs/
+layout: page
+description: Open positions with Bike Bus PDX, a fiscally-sponsored project of Cascadia Action.
+image: /assets/images/glencoe-bike-bus-1.webp
+---
+
+<h2>About Us</h2>
+
+<p>
+    Bike Bus PDX, a fiscally-sponsored project of Cascadia Action, helps school
+    PTAs organize bike buses throughout the Portland Metro area — students riding
+    set bike routes to school together. <strong>We are working towards a Portland
+    where children are biking and valued with infrastructure, funding, education
+    and access for all!</strong> Over 25 Bike Buses exist across Portland, the
+    largest concentration in North America, and have replaced roughly 250,000 car
+    trips over three years.
+</p>
+
+<h2>Open Positions</h2>
+
+<div class="job-list">
+{% assign open_jobs = site.data.jobs | where_exp: "job", "job.unlist != true" %}
+{% for job in open_jobs %}
+  {% assign job_url = site.baseurl | append: '/jobs/' | append: job.slug %}
+  <section class="job-card">
+    <h3 class="job-card__title">
+      <a href="{{ job_url }}">{{ job.title }}</a>
+    </h3>
+    {% if job.org %}<p class="job__org">{{ job.org }}</p>{% endif %}
+
+    <p class="job-card__meta">
+      <span class="pill button button--small">{{ job.location | default: "Portland, Oregon" }}</span>
+      {% if job.compensation %}<span class="pill button button--small">{{ job.compensation }}</span>{% endif %}
+    </p>
+
+    {% if job.deadline %}
+    <p class="job__deadline">
+      Accepting applications through <strong>{{ job.deadline }}</strong>; open until filled.
+    </p>
+    {% endif %}
+
+    <div class="job-card__description">
+      {{ job.description | markdownify }}
+    </div>
+
+    <p>
+      <a class="text-underline" href="{{ job_url }}">
+        Read the full job description &rarr;
+      </a>
+    </p>
+  </section>
+{% else %}
+  <p>
+    We don't have any openings right now. Follow us on
+    <a class="text-underline" href="https://www.instagram.com/bikebuspdx/">Instagram</a>
+    to hear when that changes.
+  </p>
+{% endfor %}
+</div>
+
+<h2>Other Ways to Help</h2>
+
+<p>
+    Not looking for a job, but want to get involved? The best way to start is to
+    <a class="text-underline" href="{% link _pages/riding-the-bus.md %}">ride with a bus near you</a>,
+    or to <a class="text-underline" href="{% link _pages/starting-a-bike-bus.md %}">start one at your school</a>.
+</p>

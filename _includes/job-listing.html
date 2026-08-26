@@ -1,0 +1,99 @@
+{% comment %}
+Renders the full detail for one job from _data/jobs.yml.
+Usage: {% include job-listing.html slug='bike-bus-pdx-coordinator' %}
+{% endcomment %}
+{% assign job = site.data.jobs | where: 'slug', include.slug | first %}
+{% assign apply_email = job.email | default: 'jobs@bikebuspdx.org' %}
+
+<section class="job">
+  {% if job.org %}<p class="job__org">{{ job.org }}</p>{% endif %}
+
+  <dl class="job__facts">
+    <dt>Location</dt>
+    <dd>{{ job.location | default: "Portland, Oregon" }}</dd>
+    {% if job.compensation %}
+    <dt>Compensation</dt>
+    <dd>{{ job.compensation }}</dd>
+    {% endif %}
+    {% if job.schedule %}
+    <dt>Schedule</dt>
+    <dd>{{ job.schedule }}</dd>
+    {% endif %}
+    {% if job.term %}
+    <dt>Term</dt>
+    <dd>{{ job.term }}</dd>
+    {% endif %}
+  </dl>
+
+  <h2 class="job__heading">The Role</h2>
+  <div class="job__description">
+    {{ job.description | markdownify }}
+  </div>
+
+  {% if job.responsibilities %}
+  <h2 class="job__heading">What You'll Do</h2>
+  <ul class="job__responsibilities">
+    {% for item in job.responsibilities %}
+      <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if job.qualifications %}
+  <h2 class="job__heading">Who You Are</h2>
+  <ul class="job__qualifications">
+    {% for qual in job.qualifications %}
+      <li>
+        <strong>{{ qual.name }}:</strong>
+        {{ qual.description | markdownify | remove: '<p>' | remove: '</p>' }}
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if job.preferred %}
+  <h2 class="job__heading">Preferred</h2>
+  <div class="job__preferred">
+    {{ job.preferred | markdownify }}
+  </div>
+  {% endif %}
+
+  <h2 class="job__heading">How to Apply</h2>
+  {% if job.deadline %}
+  <p class="job__deadline">
+    We will be accepting applications through <strong>{{ job.deadline }}</strong>.
+    This posting will remain open until filled.
+  </p>
+  {% endif %}
+  {% if job.apply %}
+  <div class="job__apply">
+    {{ job.apply | markdownify }}
+  </div>
+  {% endif %}
+
+  <p>
+    <a class="button button--primary"
+       href="mailto:{{ apply_email }}{% if job.subject %}?subject={{ job.subject | uri_escape }}{% endif %}">
+      Email {{ apply_email }}
+    </a>
+  </p>
+
+  {% if job.note %}
+  <div class="job__note">
+    {{ job.note | markdownify }}
+  </div>
+  {% endif %}
+</section>
+
+<p class="job__eeo">
+  Cascadia Action is an equal opportunity employer and values diversity at all
+  levels of the organization. We encourage applicants of all backgrounds,
+  identities, and lived experiences to apply. Reasonable accommodations will be
+  provided for qualified individuals with disabilities. As a nonprofit
+  organization, flexibility, collaboration, and a willingness to support
+  evolving organizational needs are expected.
+</p>
+
+<p>
+  <a class="text-underline" href="{{ site.baseurl }}/jobs/">&larr; All open positions</a>
+</p>
