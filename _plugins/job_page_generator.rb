@@ -14,7 +14,7 @@ module Bikebuspdx
         page.data.merge!(
           'layout' => 'page',
           'title' => job.fetch('title'),
-          'description' => job['description'],
+          'description' => summary(job['description']),
           'navigation_exclude' => true,
           'permalink' => "/jobs/#{slug}",
         )
@@ -22,6 +22,14 @@ module Bikebuspdx
         page.content = "{% include job-listing.html slug='#{slug}' %}"
         site.pages << page
       end
+    end
+
+    # Collapse the YAML block scalar's newlines into single spaces. Without
+    # this, head.html's `strip_newlines` joins the lines with no separator
+    # and the meta description reads 'EastPortland'.
+    def summary(text)
+      return nil unless text
+      text.gsub(/\s+/, ' ').strip
     end
   end
 end
