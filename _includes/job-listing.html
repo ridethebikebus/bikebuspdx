@@ -6,6 +6,31 @@ Usage: {% include job-listing.html slug='bike-bus-pdx-coordinator' %}
 {% assign apply_email = job.email | default: 'jobs@bikebuspdx.org' %}
 
 <section class="job">
+  {%- comment -%}
+    Share targets are built in JS from location.href because site.url is not
+    configured, so absolute_url yields a path rather than a full URL. The bar
+    starts hidden and is revealed once wired up, so it is never shown broken.
+  {%- endcomment -%}
+  <div class="job-share" hidden
+       data-share-title="{{ job.title }}{% if job.org %} - {{ job.org }}{% endif %}"
+       data-share-text="{{ job.share_text | default: job.title | escape }}">
+    <span class="job-share__label">Share this job</span>
+    <button type="button" class="job-share__button button button--small" data-job-share>
+      <i class="fa-solid fa-link" aria-hidden="true"></i>
+      <span data-job-share-text>Copy link</span>
+    </button>
+    <a class="job-share__link" data-share="email" href="#" aria-label="Share by email">
+      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+    </a>
+    <a class="job-share__link" data-share="linkedin" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+      <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+    </a>
+    <a class="job-share__link" data-share="bluesky" href="#" target="_blank" rel="noopener" aria-label="Share on Bluesky">
+      <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
+    </a>
+    <span class="job-share__status" role="status" aria-live="polite"></span>
+  </div>
+
   {% if job.org %}<p class="job__org">{{ job.org }}</p>{% endif %}
 
   <dl class="job__facts">
@@ -97,3 +122,60 @@ Usage: {% include job-listing.html slug='bike-bus-pdx-coordinator' %}
 <p>
   <a class="text-underline" href="{{ site.baseurl }}/jobs/">&larr; All open positions</a>
 </p>
+
+<script>
+(function () {
+  var bar = document.querySelector('.job-share');
+  if (!bar) return;
+
+  var url = window.location.href.split('#')[0];
+  var title = bar.getAttribute('data-share-title') || document.title;
+  var text = bar.getAttribute('data-share-text') || title;
+
+  var targets = {
+    email: 'mailto:?subject=' + encodeURIComponent(title) +
+           '&body=' + encodeURIComponent(text + '\n\n' + url),
+    // The share-offsite endpoint takes only a url and pulls its own preview
+    // text, so use the feed composer to carry our copy into the post.
+    linkedin: 'https://www.linkedin.com/feed/?shareActive=true&text=' +
+              encodeURIComponent(text + ' ' + url),
+    bluesky: 'https://bsky.app/intent/compose?text=' +
+             encodeURIComponent(text + ' ' + url)
+  };
+
+  var links = bar.querySelectorAll('[data-share]');
+  for (var i = 0; i < links.length; i++) {
+    var target = targets[links[i].getAttribute('data-share')];
+    if (target) links[i].href = target;
+  }
+
+  var button = bar.querySelector('[data-job-share]');
+  var label = bar.querySelector('[data-job-share-text]');
+  var status = bar.querySelector('.job-share__status');
+  var canShare = typeof navigator.share === 'function';
+  var canCopy = !!(navigator.clipboard && navigator.clipboard.writeText);
+
+  if (canShare) {
+    label.textContent = 'Share';
+  }
+
+  if (canShare || canCopy) {
+    button.addEventListener('click', function () {
+      if (canShare) {
+        navigator.share({ title: title, text: text, url: url }).catch(function () {});
+        return;
+      }
+      navigator.clipboard.writeText(url).then(function () {
+        status.textContent = 'Link copied!';
+        setTimeout(function () { status.textContent = ''; }, 3000);
+      }, function () {
+        status.textContent = 'Press Ctrl+C to copy: ' + url;
+      });
+    });
+  } else {
+    button.hidden = true;
+  }
+
+  bar.hidden = false;
+})();
+</script>

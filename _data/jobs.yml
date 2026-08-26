@@ -17,6 +17,8 @@
 # subject: Optional. Required subject line for the application email.
 # deadline: Optional. Date applications are accepted through, e.g.
 #   'September 15, 2026'. Rendered with an 'open until filled' note.
+# share_text: Optional. Sentence used when sharing to LinkedIn/Bluesky and
+#   via the native share sheet. Keep the date in sync with `deadline` above.
 # apply: Optional. Markdown instructions for how to apply.
 # note: Optional. Markdown fine print shown at the end of the listing.
 # unlist: Optional. If true, hide this role without deleting it.
@@ -73,6 +75,7 @@
     skills; First Aid & CPR certifications. *We expect strong candidates to be
     missing some of this.* **If the core of the role fits you, apply.**
   deadline: September 15, 2026
+  share_text: Bike Bus PDX is hiring a Bike Bus Coordinator to expand Bike Buses in East Portland! Apply by Sep. 15th
   apply: |
     To apply, please send an email with your cover letter, resume, and the
     subject line "Coordinator".
