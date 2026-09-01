@@ -2,7 +2,9 @@ require 'fileutils'
 require 'jekyll'
 require 'net/http'
 require 'tempfile'
+require 'yaml'
 require 'unicode_normalize/normalize'
+require_relative '../bikebuspdx'
 require_relative '../bikebuspdx/webp'
 require 'addressable/uri'
 
@@ -24,6 +26,29 @@ module Bikebuspdx
       clean_buses(merged)
       rehost_images(site, merged)
       merged.sort_by! { |b| b.fetch('slug')}
+      if Bikebuspdx::PREPARE_FOR_JOTFORM_TRIM
+        yml = <<~DOC
+          # Keys are:
+          # name: Required. Name of the bike bus, like 'Alameda'
+          # slug: Required. Short slug for the URL and other purposes.
+          # content: Optional. Markdown content to render above the links.
+          # link_text: Optional. Text for the top link. Usually 'Website' or 'Signup Form'.
+          # link_href: Optional: Href for the top link.
+          # image: Optional. Path to image, like /assets/images/mybikebus.jpg.
+          # map_href: Required: Href for the 'Route Map' link and when you click on the route image.
+          # map_image: Optional. Default to /assets/images/route-{slug}.png.
+          #   If using a different route image (like a jpeg), set this.
+          # map_image2: Optional, usually an alternative language for map_image.
+          # email: mybikebus@gmail.com
+          # instagram: mybikebus
+          # bluesky: mybikebus
+          # unlist: If true, hide this bike bus. Generally used for the dynamic form data, to remove a school
+        DOC
+        yml += "\n" + YAML.dump(merged)
+        buses_file = Bikebuspdx::SRC / '_data/buses.yml'
+        buses_file.write(yml)
+        return
+      end
       site.data['buses'] = merged
       # merged.each { |h| puts h if h['name'] == 'Winterhaven' }
       dir = '_pages/buses'
