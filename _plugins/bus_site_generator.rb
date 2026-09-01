@@ -40,11 +40,23 @@ module Bikebuspdx
           file.data['image'] = bus['image'] if bus['image']
           include_data = bus.dup
           include_data['map_alt'] = bus['map_alt'] || "#{name} Bike Bus Route Map"
-          kvps = include_data.map { |k, v| "#{k}='#{v}' " }.join(' ')
+          kvps = include_data.map { |k, v| "#{k}=#{quote_attr(v)} " }.join(' ')
           file.content = "{% include bus-minisite-content.html #{kvps} %}"
           file.output
         end
       end
+    end
+
+    # Liquid's include tag parser only accepts an attribute value wrapped in
+    # single or double quotes, with no way to escape a quote char inside it.
+    # Values here come from free-text form submissions (e.g. "New route for
+    # '26-'27"), so pick whichever quote char doesn't appear in the value,
+    # falling back to stripping double quotes if both are present.
+    def quote_attr(v)
+      s = v.to_s
+      return "\"#{s}\"" unless s.include?('"')
+      return "'#{s}'" unless s.include?("'")
+      "\"#{s.gsub('"', '')}\""
     end
 
     def delete_unlisted(data)
