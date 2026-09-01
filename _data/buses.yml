@@ -13,107 +13,237 @@
 # instagram: mybikebus
 # bluesky: mybikebus
 # unlist: If true, hide this bike bus. Generally used for the dynamic form data, to remove a school
+
+---
+- name: Abernethy
+  map_image: "/assets/autoimages/abernethy/map_image.webp"
+  instagram: abernethybikebus
+  image: "/assets/autoimages/abernethy/image.webp"
+  content: Rides, every Wednesday, rain or shine with additional daily rides, season-dependent.
+  email: abernethybikebus@gmail.com
+  slug: abernethy
 - name: Alameda
   email: CoachBalto@gmail.com
-  map_image: /assets/images/routes/route-alameda.webp
+  map_image: "/assets/images/routes/route-alameda.webp"
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.54595,-122.62335,15.01z
-  image: /assets/images/Alameda-Elementary-School-Bike-Bus-14.webp
-  content: |
-    Email for more info.
-- name: Abernethy
-  map_image: /assets/images/abernethy-bike-bus-1.webp
-  map_href: https://www.bikebuspdx.org
-  instagram: abernethybikebus
-  image: /assets/images/abernethy-bike-bus-2.webp
+  image: "/assets/images/Alameda-Elementary-School-Bike-Bus-14.webp"
+  content: 'Email for more info.'
+  slug: alameda
+- name: Arleta
+  content: We ride on Wednesday mornings from two separate routes - North of Arleta
+    and South of Arleta.
+  link_text: Interest Form
+  link_href: https://docs.google.com/forms/d/e/1FAIpQLSekE48izoNQdCXz_fqxfRYd7EaBwSU6sxgSoy_ozmWL9qQCag/viewform?usp=dialog
+  image: "/assets/autoimages/arleta/image.webp"
+  map_image: "/assets/autoimages/arleta/map_image.webp"
+  map_image2: "/assets/autoimages/arleta/map_image2.webp"
+  email: alisonbriggsungerer@Gmail.com
+  slug: arleta
 - name: Atkinson
   instagram: atkinsonbikebus
-  map_image: /assets/images/routes/route-atkinson.webp
+  map_image: "/assets/images/routes/route-atkinson.webp"
   map_href: https://www.google.com/maps/d/u/0/embed?mid=1tBE-e4irmU5wYU8jLVID6Vwzfmixe7c&ehbc=2E312F&ll=45.50340031703535%2C-122.59635592113287&z=15
-  content: |
-    Riding Wednesday mornings! See Route Map link for times.
+  content: 'Riding Wednesday mornings! See Route Map link for times.'
+  slug: atkinson
 - name: Beach
-  map_image: /assets/images/routes/route-beach.png
-  map_href: https://www.google.com/maps/d/u/0/viewer?hl=en&ll=45.555662386072505%2C-122.68208815000001&z=15&mid=1XzSYhdnc6okk3jOFzXiONBJYcYKPCSY
+  map_image: "/assets/autoimages/beach/map_image.webp"
+  map_href: https://www.google.com/maps/d/edit?mid=1jvTKsQ-ZVHWWqcOYwLE_E2dNLNqgGLM&usp=sharing
   instagram: beachbiketrain
-  email: transportation@overlookneighborhood.org
-  content: |
-    Departs every Friday at 7:40am. North routes leaves from N
-    Killingsworth St/Concord Ave, and South leaves from the three big
-    trees at Castle and N Overlook Blvd.
+  email: nic.cota@gmail.com
+  content: Rides every Friday, rain or shine!
+  link_text: Follow our instagram page or email us for updates!
+  link_href: https://www.instagram.com/beachbiketrain/
+  image: "/assets/autoimages/beach/image.webp"
+  map_image2: "/assets/autoimages/beach/map_image2.webp"
+  slug: beach
 - name: Beverly Cleary
-  map_image: /assets/images/routes/route-beverly-cleary.webp
-  map_href: https://beverlyclearyschoolpta.membershiptoolkit.com/bike-bus
-  email: BCSBikeBus@gmail.com
-  link_text: Website
-  link_href: https://beverlyclearyschoolpta.membershiptoolkit.com/bike-bus
-  content: |
-    Departs every Wednesday morning at 8:10am, rain or shine!
-    Check out the website for more info.
+  map_image: "/assets/autoimages/beverly-cleary/map_image.webp"
+  email: bikebus@beverlyclearyschool.org
+  content: Rides every Wednesday, rain or shine! Rally at 8:10 am and roll out at
+    8:15.
+  image: "/assets/autoimages/beverly-cleary/image.webp"
+  map_image2: "/assets/autoimages/beverly-cleary/map_image2.webp"
+  slug: beverly-cleary
 - name: César Chávez
-  map_image: /assets/images/routes/route-cesar-chavez.webp
-  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.586399,-122.71963,15.18z
-  email: treasurer@cesarchavezpta.org
+  map_image: "/assets/autoimages/cesar-chavez/map_image.webp"
+  map_href: https://felt.com/map/Cesar-Chavez-Walk-Roll-T7ZfFWmVQ4WKDlTvDjQHqC?loc=45.58464,-122.72802,14.42z
+  email: secretary@cesarchavezpta.org
+  content: We walk & roll on the first Wednesday every month!
+  image: "/assets/autoimages/cesar-chavez/image.webp"
+  slug: cesar-chavez
 - name: Chapman
-  map_image: /assets/images/routes/route-chapman.webp
-  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.53437,-122.69927,14.89z
+  map_image: "/assets/autoimages/chapman/map_image.webp"
+  map_href: https://www.google.com/maps/d/u/1/edit?mid=1EdusZFGl50Ndd7ZLsTCIkksa8yeiHGU&ll=45.531274064219204%2C-122.7006522&z=17
+  content: Weekly Rides in Fall and Spring
+  link_text: Chapman PTA Site
+  link_href: Chapman PTA Site
+  image: "/assets/autoimages/chapman/image.webp"
+  email: chapmanbikebus@gmail.com
+  instagram: chapmanbikebus?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+  slug: chapman
+- name: Chief Joseph
+  content: Ride on most Fridays, organized by group text. Email contact to be added!
+  image: "/assets/autoimages/chief-joseph/image.webp"
+  map_href: https://www.google.com/maps/d/u/0/edit?mid=1dlDgmNWO4aCGZB-Lz-RCOA6KB3Eq0mA&usp=sharing
+  email: kristin.e.sweeney@gmail.com
+  slug: chief-joseph
 - name: Creston
   link_text: Signup Form
   link_href: https://docs.google.com/forms/d/e/1FAIpQLScwa_GjElUGTrAbOgEjXNjryGy4GFNYNGZEXzCD8_NteFQZIw/viewform?usp=sharing
-  map_image: /assets/images/routes/route-creston.webp
+  map_image: "/assets/autoimages/creston/map_image.webp"
   map_href: https://www.google.com/maps/d/u/0/edit?mid=1UJIqiJMy9wE9QmA3Eqd9ediZyTuG4jk&ll=45.49434660711144%2C-122.6046248&z=16
-  image: /assets/images/creston-bike-bus-1.webp
+  image: "/assets/autoimages/creston/image.webp"
   email: anti.mle@gmail.com
   instagram: crestoneaglesbikebus
+  content: We ride every Friday, rain or shine!
+  slug: creston
 - name: da Vinci
-  map_image: /assets/images/routes/route-da-vinci.webp
+  map_image: "/assets/images/routes/route-da-vinci.webp"
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.497235,-122.604792,15.67z
   email: christopherjrall@gmail.com
+  slug: da-vinci
+- name: Duniway
+  content: We start the ride at 7:30am every Friday - rain or shine!
+  image: "/assets/autoimages/duniway/image.webp"
+  map_image: "/assets/autoimages/duniway/map_image.webp"
+  map_href: https://www.instagram.com/p/DPUGEF0iXBvjEvTbOEknOdeZ2S4TCz6f3Hfosk0/
+  email: heplermichelle@gmail.com
+  instagram: duniwaybikebus
+  slug: duniway
 - name: Glencoe
-  map_href: https://felt.com/map/Glencoe-Bike-Bus-Map-PWlgBEQ6SPSxlMQKRPfsAD
-  map_image: /assets/images/routes/route-glencoe.webp
-  image: /assets/images/glencoe-bike-bus-1.webp
+  map_href: https://felt.com/map/Glencoe-Bike-Bus-Map-PWlgBEQ6SPSxlMQKRPfsAD?loc=45.51672,-122.60797,14.85z
+  map_image: "/assets/autoimages/glencoe/map_image.webp"
+  image: "/assets/autoimages/glencoe/image.webp"
   email: glencoebikebus@gmail.com
   instagram: glencoebikebus
-  content: |
-    Riding every Wednesday morning, rain or shine!
+  content: Rides every Wednesday, rain or shine!
+  bluesky: glencoebikebus.bsky.social
+  slug: glencoe
+- name: Harriet Tubman Middle School
+  content: Rides every day, rain or shine!
+  link_text: signup form
+  link_href: https://docs.google.com/forms/d/e/1FAIpQLSdHIfwBYE23zYSiPjRk9h_T4RTC6snUtsRevIu1iLQMxszQ6w/viewform?usp=sharing&ouid=116578119171741083665
+  image: "/assets/autoimages/harriet-tubman-middle-school/image.webp"
+  map_image: "/assets/autoimages/harriet-tubman-middle-school/map_image.webp"
+  map_href: https://www.google.com/maps/d/viewer?mid=163K3xCeM-8vUEvk_Eq0jTc-ifoTaPL0&ll=45.54732303774692%2C-122.65737899999999&z=15
+  email: kirkohly@gmail.com
+  instagram: htms_bikebus_pdx
+  slug: harriet-tubman-middle-school
 - name: James John
   link_text: James John Bike Bus Homepage
   link_href: https://linkpages.pro/A9OFjO
   email: jamesjohnbikebus@gmail.com
-  map_image: /assets/images/routes/route-james-john.en.webp
+  map_image: "/assets/images/routes/route-james-john.en.webp"
   map_alt: James John Bike Bus Route Map (English)
-  map_image2: /assets/images/routes/route-james-john.es.webp
+  map_image2: "/assets/images/routes/route-james-john.es.webp"
   map_alt2: James John Bike Bus Route Map (Spanish)
+  slug: james-john
+- name: Lane
+  content: Wednesdays - East and West routes!
+  image: "/assets/autoimages/lane/image.webp"
+  map_image: "/assets/autoimages/lane/map_image.webp"
+  map_image2: "/assets/autoimages/lane/map_image2.webp"
+  email: lanemspta@gmail.com
+  slug: lane
 - name: Lent
-  map_image: /assets/images/routes/route-lent.webp
+  map_image: "/assets/images/routes/route-lent.webp"
+  slug: lent
 - name: Maplewood
-  map_image: /assets/images/routes/route-maplewood.webp
+  map_image: "/assets/images/routes/route-maplewood.webp"
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.470737,-122.720523,15.56z
+  slug: maplewood
 - name: Metzger
-  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.448305,-122.758826,15.11z
-  image: /assets/images/metzger-bike-bus.webp
-  instagram: metzgerbikebus
-  map_image: /assets/images/routes/route-metzger.webp
-- name: Rigler
-  map_image: /assets/images/routes/route-rigler.webp
-  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.560811,-122.605387,15.22z
+  image: "/assets/autoimages/metzger/image.webp"
+  map_image: "/assets/autoimages/metzger/map_image.webp"
+  content: New route for '26-'27
+  link_text: 'Newsletter '
+  link_href: https://mailchi.mp/10e1530a81ae/metzger-bike-bus-newsletter-sign-up
+  map_image2: "/assets/autoimages/metzger/map_image2.webp"
+  email: santafe1959@yahoo.com
+  bluesky: metzger-bike-bus.bsky.social
+  slug: metzger
+- name: Peninsula
+  content: Rides every Friday, rain or shine
+  image: "/assets/autoimages/peninsula/image.webp"
+  map_image: "/assets/autoimages/peninsula/map_image.webp"
+  email: scottbencohen@gmail.com
+  instagram: www.instagram.com/peninsula_pta/
+  slug: peninsula
 - name: Richmond
-  map_image: /assets/images/routes/route-richmond.webp
+  map_image: "/assets/images/routes/route-richmond.webp"
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.50862,-122.6268,14.25z
+  slug: richmond
+- name: Rigler
+  map_image: "/assets/images/routes/route-rigler.webp"
+  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.560811,-122.605387,15.22z
+  slug: rigler
 - name: Rose City Park
-  map_image: /assets/images/routes/route-rose-city-park.webp
+  map_image: "/assets/images/routes/route-rose-city-park.webp"
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.539736,-122.598669,15.16z
+  slug: rose-city-park
+- name: Sabin
+  content: 2026 → Every Wednesday!
+  link_text: WhatsApp Sabin Bike Bus Group
+  link_href: https://chat.whatsapp.com/I5Ma7b5UaN6DSnBGpjFwFi
+  image: "/assets/autoimages/sabin/image.webp"
+  map_image: "/assets/autoimages/sabin/map_image.webp"
+  map_href: https://felt.com/map/Sabin-Bike-Bus-plBLTqMERfabZ5ydcBfkkD?loc=45.552616,-122.642648,15.33z
+  email: sabin-bike-bus-pdx@googlegroups.com
+  instagram: Sabinbikebus
+  slug: sabin
+- name: Stephenson
+  content: Stephenson Bike Bus - Wednesdays
+  link_text: Whatsapp
+  link_href: https://chat.whatsapp.com/JIGkSiyhiKnD2BsvxgENaV
+  image: "/assets/autoimages/stephenson/image.webp"
+  map_image: "/assets/autoimages/stephenson/map_image.webp"
+  map_href: https://www.google.com/maps/d/u/0/edit?mid=1WkWr6OFu2Gm2SqSZPsVgaD2Sa7gfoaw&usp=sharing
+  email: stephensonbikebus@gmail.com
+  instagram: stephensonbikebus
+  slug: stephenson
 - name: Sunnyside
-  map_image: /assets/images/routes/route-sunnysize.webp
-  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.514456,-122.63128,15.41z
+  map_image: "/assets/autoimages/sunnyside/map_image.webp"
+  content: Rides Fridays! Meet at 8:25, roll at 8:30am.
+  image: "/assets/autoimages/sunnyside/image.webp"
+  email: alidacantor@gmail.com
+  slug: sunnyside
+- name: The Ivy School
+  content: Rides every Friday, rain or shine!
+  image: "/assets/autoimages/the-ivy-school/image.webp"
+  map_image: "/assets/autoimages/the-ivy-school/map_image.webp"
+  email: theivyschoolbikebus@gmail.com
+  instagram: theivyschoolbikebus
+  slug: the-ivy-school
 - name: Vernon
-  map_image: /assets/images/routes/route-vernon.webp
+  map_image: "/assets/images/routes/route-vernon.webp"
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.559758,-122.634528,15.52z
+  slug: vernon
 - name: Vestal
-  map_image: /assets/images/routes/route-vestal.webp
-  map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.530081,-122.581037,15.45z
-  image: /assets/images/vestal-tallbikes.webp
+  map_image: "/assets/autoimages/vestal/map_image.webp"
+  map_href: https://www.vestalpta.com/greenteam
+  image: "/assets/autoimages/vestal/image.webp"
   instagram: vestalpta
+  content: 'Join our bike buses - we ride rain or shine! '
+  email: vestalgreenteam@gmail.com
+  slug: vestal
+- name: Whitman
+  content: Wednesday Bike Bus
+  image: "/assets/autoimages/whitman/image.webp"
+  map_image: "/assets/autoimages/whitman/map_image.webp"
+  email: benhelms@gmail.com
+  slug: whitman
+- name: Winterhaven
+  content: Ride bikes with us to school!
+  image: "/assets/autoimages/winterhaven/image.webp"
+  email: darinbike@gmail.com
+  slug: winterhaven
+- name: Woodmere
+  content: Wednesday Mornings!
+  image: "/assets/autoimages/woodmere/image.webp"
+  map_image: "/assets/autoimages/woodmere/map_image.webp"
+  email: erosario@pps.net
+  slug: woodmere
 - name: Woodstock
-  map_image: /assets/images/routes/route-woodstock.webp
+  map_image: "/assets/images/routes/route-woodstock.webp"
   map_href: https://felt.com/map/Bike-Bus-PDX-gkbZiDSyRn9BYtRFrVgDqLA?loc=45.482117,-122.611733,15.63z
+  slug: woodstock
