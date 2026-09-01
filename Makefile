@@ -22,6 +22,14 @@ shell:
 	  --entrypoint bash \
       bikebuspdx:latest
 
+prepare-for-jotform-trim:
+	@docker run --rm \
+	  -v ${PWD}:/app \
+	  --env-file .env \
+	  -e PREPARE_FOR_JOTFORM_TRIM=1 \
+	  -e USE_LOCAL_IMAGES=false \
+	  bikebuspdx:latest \
+	  build
 
 optimize-images:
 	@docker run --rm \
