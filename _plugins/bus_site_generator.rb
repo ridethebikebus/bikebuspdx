@@ -181,23 +181,25 @@ module Bikebuspdx
       res
     end
 
-    def webhookdb_table = @webhookdb_table ||= ENV.fetch('WEBHOOKDB_TABLE', 'jotform_webhook_v1_ce87')
-    def webhookdb_org = @webhookdb_org ||= ENV.fetch('WEBHOOKDB_ORG', 'bikebuspdx')
-    def webhookdb_conn_url = @webhookdb_conn_url ||= ENV.fetch('WEBHOOKDB_CONNECTION_URL', nil)
+    def webhookdb_table = @webhookdb_table ||= Bikebuspdx::WEBHOOKDB_TABLE
+    def webhookdb_org = @webhookdb_org ||= Bikebuspdx::WEBHOOKDB_ORG
+    def webhookdb_conn_url = @webhookdb_conn_url ||= Bikebuspdx::WEBHOOKDB_CONNECTION_URL
     def webhookdb_hash = @webhookdb_hash ||= Digest::SHA256.hexdigest(self.webhookdb_conn_url)
-    def form_update_secret = @form_update_secret ||= ENV.fetch('FORM_UPDATE_SECRET', nil)
+    def form_update_secret = @form_update_secret ||= Bikebuspdx::FORM_UPDATE_SECRET
     # True to use local copies of images. Should only be used locally during development
     # to avoid pulling images every time the server starts.
     # Do not use in production, since it'd potentially cause stale images to be used.
-    def use_local_images = @use_local_images ||= ENV.fetch('USE_LOCAL_IMAGES', nil)
+    def use_local_images = @use_local_images ||= Bikebuspdx::USE_LOCAL_IMAGES
 
     def select_sql
       @select_sql ||= <<~SQL
         SELECT
             DISTINCT ON (lower(questions->>'school'), lower(questions->>'schooltext'))
             CASE
-                WHEN questions->>'school' != '' THEN questions->>'school'
-                ELSE questions->>'schooltext' END
+                -- Prefer to use schooltext if set, since it's otherwise too easy to
+                -- select a dropdown school and accidentally stomp on it.
+                WHEN questions->>'schooltext' != '' THEN questions->>'schooltext'
+                ELSE questions->>'school' END
                 AS name,
             questions->>'maintext' as content,
             questions->>'websitelabel' as link_text,
