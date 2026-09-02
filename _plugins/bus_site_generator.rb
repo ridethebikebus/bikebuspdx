@@ -116,12 +116,12 @@ module Bikebuspdx
     end
 
     def set_socials(h)
-      if (s = h.fetch('bluesky', "")).length > 0
+      if (s = (h['bluesky'] || '')).length > 0
         s = s.delete_prefix("https://bsky.app/profile/")
         s = s.delete_prefix('@')
         h['bluesky'] = s
       end
-      if (s = h.fetch('instagram', '')).length > 0
+      if (s = (h['instagram'] || '')).length > 0
         s = s.delete_prefix("https://www.instagram.com/")
         s = s.delete_prefix('@')
         h['instagram'] = s
@@ -216,30 +216,73 @@ module Bikebuspdx
     # Do not use in production, since it'd potentially cause stale images to be used.
     def use_local_images = @use_local_images ||= Bikebuspdx::USE_LOCAL_IMAGES
 
+    # Jotform key of the radio field that marks a submission as a partial
+    # update: a value containing the string 'Partial' counts as partial,
+    # anything else (including a missing key, e.g. submissions from before
+    # this field existed) is treated as a full update.
+    PARTIAL_UPDATE_FIELD = 'updatetype'
+
+    # Builds a "latest non-blank value wins" expression for a jsonb field,
+    # scoped to whatever row set the surrounding query's FROM/GROUP BY defines.
+    # Blank string is treated the same as NULL, matching clean_buses's semantics.
+    def field_agg(json_expr)
+      blank_to_null = "NULLIF(#{json_expr}, '')"
+      "(array_agg(#{blank_to_null} ORDER BY submit_date DESC) " \
+        "FILTER (WHERE #{blank_to_null} IS NOT NULL))[1]"
+    end
+
     def select_sql
       @select_sql ||= <<~SQL
+        WITH candidates AS (
+            SELECT
+                *,
+                CASE
+                    -- Prefer to use schooltext if set, since it's otherwise too easy to
+                    -- select a dropdown school and accidentally stomp on it.
+                    WHEN questions->>'schooltext' != '' THEN questions->>'schooltext'
+                    ELSE questions->>'school' END
+                    AS resolved_name,
+                COALESCE(questions->>'#{PARTIAL_UPDATE_FIELD}', '') LIKE '%Partial%' AS is_partial
+            FROM #{webhookdb_table}
+            WHERE questions->>'password' = '#{form_update_secret}'
+        ),
+        -- The base layer: each school's latest full (non-partial) submission.
+        base AS (
+            SELECT DISTINCT ON (lower(questions->>'school'), lower(questions->>'schooltext'))
+                questions->>'school' AS school,
+                questions->>'schooltext' AS schooltext,
+                submit_date AS base_submit_date
+            FROM candidates
+            WHERE NOT is_partial
+            ORDER BY lower(questions->>'school'), lower(questions->>'schooltext'), submit_date DESC
+        ),
+        -- The base row itself, plus every partial submission for that school
+        -- submitted after the base. Schools with no base row are dropped,
+        -- same as the old query would drop a school with no submissions.
+        layered AS (
+            SELECT c.*
+            FROM candidates c
+            JOIN base b
+                ON lower(b.school) = lower(c.questions->>'school')
+               AND lower(b.schooltext) = lower(c.questions->>'schooltext')
+               AND c.submit_date >= b.base_submit_date
+        )
         SELECT
-            DISTINCT ON (lower(questions->>'school'), lower(questions->>'schooltext'))
-            CASE
-                -- Prefer to use schooltext if set, since it's otherwise too easy to
-                -- select a dropdown school and accidentally stomp on it.
-                WHEN questions->>'schooltext' != '' THEN questions->>'schooltext'
-                ELSE questions->>'school' END
-                AS name,
-            questions->>'maintext' as content,
-            questions->>'websitelabel' as link_text,
-            questions->>'websitelink' as link_href,
-            questions->'headerimage'->>0 as image,
-            questions->'image1'->>0 as map_image,
-            questions->'image2'->>0 as map_image2,
-            questions->>'routemaplink' as map_href,
-            questions->>'unlist' as unlist,
-            questions->>'email' as email,
-            questions->>'bluesky' as bluesky,
-            questions->>'instagram' as instagram
-        FROM #{webhookdb_table}
-        WHERE questions->>'password' = '#{form_update_secret}'
-        ORDER BY lower(questions->>'school'), lower(questions->>'schooltext'), submit_date DESC
+            (array_agg(resolved_name ORDER BY submit_date DESC))[1] AS name,
+            #{field_agg("questions->>'maintext'")} AS content,
+            #{field_agg("questions->>'websitelabel'")} AS link_text,
+            #{field_agg("questions->>'websitelink'")} AS link_href,
+            #{field_agg("questions->'headerimage'->>0")} AS image,
+            #{field_agg("questions->'image1'->>0")} AS map_image,
+            #{field_agg("questions->'image2'->>0")} AS map_image2,
+            #{field_agg("questions->>'routemaplink'")} AS map_href,
+            #{field_agg("questions->>'unlist'")} AS unlist,
+            #{field_agg("questions->>'email'")} AS email,
+            #{field_agg("questions->>'bluesky'")} AS bluesky,
+            #{field_agg("questions->>'instagram'")} AS instagram
+        FROM layered
+        GROUP BY lower(questions->>'school'), lower(questions->>'schooltext')
+        ORDER BY name
       SQL
     end
   end
