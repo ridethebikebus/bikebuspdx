@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}'>
+  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 | escape }}{% else %}{{ site.description }}{% endif %}'>
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicon-32x32.png">
@@ -12,6 +12,27 @@
   <link rel="manifest" href="{{ site.baseurl }}/assets/site.webmanifest">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+  <!-- Open Graph / social sharing previews (Bluesky, LinkedIn, Facebook, iMessage) -->
+  {%- capture og_title -%}
+    {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+  {%- endcapture -%}
+  {%- capture og_description -%}
+    {% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ site.description }}{% endif %}
+  {%- endcapture -%}
+  {%- assign og_image = page.share_image | default: site.share-image -%}
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ og_title | strip | escape }}">
+  <meta property="og:description" content="{{ og_description | strip | escape }}">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <meta property="og:image" content="{{ og_image | absolute_url }}">
+  <meta property="og:image:alt" content="{{ og_title | strip | escape }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title | strip | escape }}">
+  <meta name="twitter:description" content="{{ og_description | strip | escape }}">
+  <meta name="twitter:image" content="{{ og_image | absolute_url }}">
+
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
   <!-- Fonts -->

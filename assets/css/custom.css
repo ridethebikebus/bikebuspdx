@@ -63,6 +63,51 @@
   margin-bottom: var(--spacing-2);
 }
 
+.job-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-1);
+  margin-bottom: var(--spacing-3);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.job-share[hidden] {
+  display: none;
+}
+
+.job-share__label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: var(--spacing-1);
+}
+
+.job-share__button {
+  border: none;
+}
+
+.job-share__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #101113;
+  background-color: #ececec;
+  text-decoration: none;
+}
+
+.job-share__link:hover {
+  background-color: #dcdcdc;
+}
+
+.job-share__status {
+  font-size: 14px;
+  color: #757575;
+}
+
 .job__deadline {
   margin-bottom: var(--spacing-2);
   font-weight: 600;

@@ -17,6 +17,8 @@
 # subject: Optional. Required subject line for the application email.
 # deadline: Optional. Date applications are accepted through, e.g.
 #   'September 15, 2026'. Rendered with an 'open until filled' note.
+# share_text: Optional. Sentence used when sharing to LinkedIn/Bluesky and
+#   via the native share sheet. Keep the date in sync with `deadline` above.
 # apply: Optional. Markdown instructions for how to apply.
 # note: Optional. Markdown fine print shown at the end of the listing.
 # unlist: Optional. If true, hide this role without deleting it.
@@ -26,7 +28,7 @@
   location: East Portland, Oregon
   compensation: $63K-$65K annually
   schedule: M-F 9-5; occasional work before 9am, after 5pm, and weekends required
-  term: Grant-funded through 6/30/2029, with the possibility of extension
+  term: Grant-funded through 6/30/2028, with the possibility of extension
   email: jobs@bikebuspdx.org
   subject: Coordinator
   description: |
@@ -73,9 +75,73 @@
     skills; First Aid & CPR certifications. *We expect strong candidates to be
     missing some of this.* **If the core of the role fits you, apply.**
   deadline: September 15, 2026
+  share_text: Bike Bus PDX is hiring a Bike Bus Coordinator to expand Bike Buses in East Portland! Apply by Sep. 15th
   apply: |
     To apply, please send an email with your cover letter, resume, and the
     subject line "Coordinator".
+  note: |
+    This job description is intended to describe the general nature of the role
+    and is not a comprehensive list of all duties or responsibilities.
+- title: Lent Elementary Bike Bus Champion
+  slug: lent-elementary-bike-bus-champion
+  org: Bike Bus PDX / Cascadia Action
+  location: Lent Elementary School, Portland Oregon
+  compensation: $30.24/hr
+  schedule: Part-time. 5-7 hours/week during the school year
+  deadline: September 18, 2026
+  term: Grant-funded through 6/30/2028, with the possibility of extension
+  email: jobs@bikebuspdx.org
+  subject: Champion
+  share_text: Bike Bus PDX is hiring a Bike Bus Champion at Lent Elementary to expand Bike Buses in East Portland!
+  description: |
+    Bike Bus Champions are crucial in ensuring a school's bike bus takes hold
+    and keeps going! You will be working to coordinate bike bus volunteer
+    schedules, connect families to bikes and resources, develop engaging
+    culturally-responsive programming, and promote the bike bus at school events
+    and PTA meetings. But you don't need to know how to do it all - we'll teach
+    you the skills as you go, with full ongoing support provided.
+  responsibilities:
+    - '**Collaborate** with school staff and Bike Bus Coordinator to build relationships with school families'
+    - '**Coordinate** bike bus volunteer schedules, communications and supplies'
+    - '**Promote** the bike bus within your school and the wider community through English/Spanish bilingual outreach — school events, flyers, newsletters, social posts, community gatherings, and conversations at drop-off'
+    - '**Educate** students and families on how a bike bus works and what it takes to keep one going'
+    - '**Collaborate** with Coordinator to plan and execute biannual school bike fair and bike swap'
+    - '**Relay** bike bus route and safety concerns to the Coordinator'
+    - '**Attend** monthly city-wide bike bus leader meetings, Champion training and the biannual Bike Bus leader retreats'
+    - '**Support** the bike bus as a PTA-led activity'
+  qualifications:
+    - name: Equity-Focused Connector
+      description: |
+        You are a respected parent, caregiver, staff or community member who
+        cares deeply about all students having access to safe, joyful and
+        independent active school transportation. Being bilingual in Spanish is
+        a huge plus!
+    - name: Natural Communicator
+      description: |
+        You enjoy talking to people and are comfortable making the first
+        approach, whether that is to a family at drop-off or at a business down
+        the block.
+    - name: Eager Learner
+      description: |
+        You are curious about ways to gather the full school community around
+        the bike bus, and are ready to dig in. You do not need experience in
+        this area - we'll teach you!
+    - name: Self-Directed and Reliable
+      description: |
+        You set your own working hours, and do well with executing tasks without
+        day-to-day oversight.
+    - name: Present When It Counts
+      description: |
+        You are available for occasional early mornings and weekend events, and
+        you are a visible, welcoming face when families show up.
+  preferred: |
+    Bilingual in English/Spanish, lived experience in the Lent community; comfort
+    riding a bike; experience with community organizing, school volunteering or
+    PTAs. *We expect strong candidates to be missing some of this.* **If the core
+    of the role fits you, please apply.**
+  apply: |
+    To apply, please send an email with your cover letter, resume, and the
+    subject line "Champion".
   note: |
     This job description is intended to describe the general nature of the role
     and is not a comprehensive list of all duties or responsibilities.
