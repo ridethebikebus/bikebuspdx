@@ -137,9 +137,35 @@ module Bikebuspdx
           next unless needs_rehost
           asset_rel_path = "autoimages/#{h.fetch('slug')}/#{k}.webp"
           out_path = "assets/#{asset_rel_path}"
-          is_new = !File.exist?(out_path)
-          next if !is_new && self.use_local_images
-          res = get_url(link)
+          already_exists = File.exist?(out_path)
+          # Just reuse the file if we have it, and prefer local images.
+          next if already_exists && self.use_local_images
+          # Otherwise, fetch the image. This can:
+          # - succeed and download the image,
+          # - fail with a 404 because the image is deleted in jotform, or
+          # - fail with another type of error.
+          # If succeeded, rehost the image. If we fail with an unexpected error,
+          # raise. If we fail with a 404, AND we already have an image,
+          # go ahead and use it.
+          #
+          # We must handle 404s specially because we need to delete images
+          # from the actual Jotform account. The reference in the DB will still be present,
+          # but the file is gone, and we can assume we've already downloaded the file
+          # because that is a requirement before we trim anything from Jotform.
+          begin
+            res = get_url(link)
+          rescue RuntimeError => e
+            if e.to_s.include?('404 Not Found')
+              if already_exists
+                Jekyll.logger.info :bikebusgen, "jotform image gone, using local (#{out_path}): #{link}"
+                next
+              end
+              msg = "404 fetching #{link}, could not save to #{out_path}, " \
+                    "file was somehow deleted in Jotform submissions"
+              raise msg
+            end
+            raise e
+          end
           Jekyll.logger.info :bikebusgen, "rehosting #{link} (status: #{res.code}, size: #{res.body.size}) to #{out_path}"
           FileUtils.mkdir_p(File.dirname(out_path))
           Tempfile.create(File.basename(link), binmode: true) do |f|
@@ -150,7 +176,7 @@ module Bikebuspdx
           # If the output file did not exist when the build started, we need to explicitly add it as a static file,
           # so it's copied to the _site build folder. Otherwise, the file is placed in the (source) assets directory,
           # but not copied over to the build folder, so doesn't get included in production.
-          site.static_files << Jekyll::StaticFile.new(site, site.source, 'assets', asset_rel_path) if is_new
+          site.static_files << Jekyll::StaticFile.new(site, site.source, 'assets', asset_rel_path) unless already_exists
           h[k] = "/#{out_path}"
         end
       end
