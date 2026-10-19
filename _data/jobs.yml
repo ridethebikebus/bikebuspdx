@@ -24,6 +24,7 @@
 # unlist: Optional. If true, hide this role without deleting it.
 - title: Bike Bus Coordinator
   slug: bike-bus-pdx-coordinator
+  unlist: true
   org: Bike Bus PDX / Cascadia Action
   location: East Portland, Oregon
   compensation: $63K-$65K annually
@@ -84,6 +85,7 @@
     and is not a comprehensive list of all duties or responsibilities.
 - title: Lent Elementary Bike Bus Champion
   slug: lent-elementary-bike-bus-champion
+  unlist: true
   org: Bike Bus PDX / Cascadia Action
   location: Lent Elementary School, Portland Oregon
   compensation: $30.24/hr

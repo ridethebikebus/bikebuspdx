@@ -38,5 +38,13 @@
   {
     "from": "/leaders",
     "to": "https://portlandstate.qualtrics.com/jfe/form/SV_cLUhlChLuxwvYmG"
+  },
+  {
+    "from": "/jobs/bike-bus-pdx-coordinator",
+    "to": "/jobs/"
+  },
+  {
+    "from": "/jobs/lent-elementary-bike-bus-champion",
+    "to": "/jobs/"
   }
 ]
