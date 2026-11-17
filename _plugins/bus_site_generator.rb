@@ -270,7 +270,7 @@ module Bikebuspdx
                     AS resolved_name,
                 COALESCE(questions->>'#{PARTIAL_UPDATE_FIELD}', '') LIKE '%Partial%' AS is_partial
             FROM #{webhookdb_table}
-            WHERE questions->>'password' = '#{form_update_secret}'
+            WHERE lower(questions->>'password') = '#{form_update_secret}'
         ),
         -- The base layer: each school's latest full (non-partial) submission.
         base AS (
