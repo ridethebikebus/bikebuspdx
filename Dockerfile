@@ -1,4 +1,4 @@
-FROM ruby:3.2.3
+FROM ruby:3.4
 
 RUN apt-get update && apt-get install -y webp && rm -rf /var/lib/apt/lists/*
 
