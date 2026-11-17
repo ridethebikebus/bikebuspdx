@@ -11,3 +11,5 @@ gem "addressable"
 gem "sass-embedded", "< 1.70.0" # Avoid deprecation warnings in code we aren't updating anyway.
 gem "rake" # google-protobuf's native extension build needs this; no longer a Ruby 3.4+ default gem.
 gem "csv" # jekyll requires this; no longer a Ruby 3.4+ default gem.
+gem "base64" # safe_yaml and em-websocket require this; no longer a Ruby 3.4+ default gem.
+gem "bigdecimal" # liquid requires this; no longer a Ruby 3.4+ default gem.
