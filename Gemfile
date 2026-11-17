@@ -9,3 +9,4 @@ gem 'jekyll-tagging'
 gem "jekyll-sitemap"
 gem "addressable"
 gem "sass-embedded", "< 1.70.0" # Avoid deprecation warnings in code we aren't updating anyway.
+gem "rake" # google-protobuf's native extension build needs this; no longer a Ruby 3.4+ default gem.
