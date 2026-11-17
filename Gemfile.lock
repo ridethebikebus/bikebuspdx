@@ -5,6 +5,7 @@ GEM
       public_suffix (>= 2.0.2, < 8.0)
     colorator (1.1.0)
     concurrent-ruby (1.3.6)
+    csv (3.3.7)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -83,6 +84,7 @@ PLATFORMS
 
 DEPENDENCIES
   addressable
+  csv
   jekyll (~> 4.3.2)
   jekyll-paginate
   jekyll-sitemap
